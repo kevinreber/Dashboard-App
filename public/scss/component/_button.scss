@@ -1,0 +1,24 @@
+button {
+    padding: 10px auto;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+// .button {
+//     &-submit {
+
+//         &-message,
+//         &-settings {
+//             background-color: $color-primary;
+//         }
+//     }
+
+//     &-cancel-settings {
+//         background-color: $color-page-title;
+//     }
+// }
+
+.button-submit-message {
+    background-color: $color-primary;
+}

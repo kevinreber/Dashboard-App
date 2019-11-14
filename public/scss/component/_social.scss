@@ -1,0 +1,52 @@
+.social {
+
+
+    &-card {
+        border: 1px solid $color-section-title;
+        border-radius: 5px;
+        background-color: $color-page-title;
+        margin-bottom: 15px;
+        padding: 30px auto;
+        display: flex;
+        justify-content: flex-start;
+
+    }
+
+    &-icon {
+        margin-right: 15px;
+        border-radius: 100%;
+        border: 1px solid $color-secondary;
+        background-color: $color-tertiary;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-text {
+        width: 60%;
+    }
+
+    &-stats {
+        font-size: 48px;
+        font-weight: 300;
+    }
+
+}
+
+@media (min-width: $desktop) {
+
+    .social {
+        &-stats-section {
+            grid-row-start: 2;
+            grid-row-end: -1;
+        }
+
+        &-card {
+            display: flex;
+            flex-direction: row;
+        }
+
+    }
+
+}

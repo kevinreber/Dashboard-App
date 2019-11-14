@@ -1,0 +1,16 @@
+.grid-container {
+    height: 100vh;
+    display: grid;
+}
+
+main {
+    width: 95%;
+    margin: auto;
+}
+
+@media (min-width: $desktop) {
+    .grid-container {
+        grid-template-columns: 90px repeat(3, 1fr);
+        grid-template-rows: 70px .5fr repeat(2, 2fr) 1fr repeat(2, 2fr);
+    }
+}

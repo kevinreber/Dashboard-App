@@ -1,0 +1,12 @@
+.social-card {
+    & svg {
+        width: 2.5rem;
+        fill: $color-secondary;
+        
+        & path {
+            fill: #fff;
+        }
+    }
+
+
+}

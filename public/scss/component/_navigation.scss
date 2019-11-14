@@ -1,0 +1,37 @@
+.nav {
+    &-bar {
+        background-color: $color-secondary;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &-items{
+        width: 80%;
+   text-align: center;
+    }
+
+    &-icon {
+        margin: .6rem .6rem;
+        width: 2rem;
+    }
+}
+
+// PLACEHOLDER
+.nav-selected{
+    border-bottom: 5px solid green;
+}
+
+@media (min-width: $desktop) {
+
+    .side {
+        &-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            grid-row-start: 2;
+            grid-row-end: -1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+    }
+}

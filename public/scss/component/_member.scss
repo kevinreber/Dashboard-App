@@ -1,0 +1,19 @@
+.member {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    &-date {
+        margin: 0;
+    }
+
+    &-text{
+        align-self: flex-start;
+    }
+}
+
+.search-user,
+#write-message {
+    margin-bottom: 10px;
+}

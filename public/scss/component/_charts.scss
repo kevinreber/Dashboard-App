@@ -1,0 +1,12 @@
+.chart-area-title {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        li {
+            margin-left: 15px;
+            font-size: 14px;
+            display: inline-block;
+        }
+    }
+}

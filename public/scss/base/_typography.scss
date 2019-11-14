@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+input,
+a,
+button,
+label,
+textarea,
+span {
+    font-family: $font-primary;
+}
+
+#app-name{
+    font-size: 28px;
+}
+
+h2,
+h3 {
+    color: $color-section-title;
+}
+
+@media (min-width: $desktop) {
+    h1 {
+        font-size: 36px;
+    }
+}
+
+h3 {
+    font-size: 15px;
+}

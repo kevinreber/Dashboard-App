@@ -1,0 +1,10 @@
+//Fade In
+.show {
+    transition: opacity 400ms;
+}
+
+.hide {
+    opacity: 0;
+}
+
+//Fade Out

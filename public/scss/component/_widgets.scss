@@ -1,0 +1,45 @@
+.widgets {
+    & h1 {
+        margin: 0;
+        display: inline-block;
+    }
+
+
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+input,
+textarea {
+    background-color: #f5f5f5;
+    padding: 8px;
+    border: 1px solid $color-section-title;
+}
+
+input {
+    width: 45%;
+}
+
+
+textarea {
+    width: 100%;
+}
+
+.alert {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    padding: .5px;
+    background-color: $color-secondary;
+    text-align: center;
+}
+
+input,
+textarea,
+.alert {
+    border-radius: 5px;
+}
