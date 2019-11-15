@@ -1,15 +1,38 @@
-.member {
+.new-members,
+.recent-activity {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+}
+
+.member {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     margin-bottom: 1rem;
 
-    &-date {
+    a{
+        text-decoration: none;
+        color: $color-primary;
+    }
+
+    p {
         margin: 0;
     }
 
-    &-text{
-        align-self: flex-start;
+    img {
+        margin-right: .7rem;
+    }
+
+    // &-date {
+//
+    // }
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+     
     }
 }
 

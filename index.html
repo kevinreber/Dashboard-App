@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap" rel="stylesheet">
     <!-- CHART LIBRARY CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+    <!-- TOGGLE SWITCH -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
     <link rel="stylesheet" href="public/css/styles.css">
 </head>
 
@@ -37,7 +40,7 @@
         </nav>
         <main>
             <!-- Page Widgets -->
-            <div class="widgets">
+            <section class="widgets">
                 <div class="dashboard">
                     <h1>Dashboard</h1>
                     <input class="search-bar" type="text" placeholder="Search...">
@@ -45,39 +48,41 @@
                 <div class="alert">
                     <p><strong>ALERT:</strong> You have 4 overdue tasks to complete</p>
                 </div>
-            </div>
+            </section>
 
             <!-- Area Chart -->
-            <!-- <div class="chart-section-1"> -->
-            <div class="chart-area">
-                <div class="chart-area-title">
-                    <h3>TRAFFIC</h3>
-                    <ul>
-                        <li>Hourly</li>
-                        <li>Daily</li>
-                        <li>Weekly</li>
-                        <li>Monthly</li>
-                    </ul>
+            <section class="chart-section">
+                <div class="chart-area">
+                    <div class="chart-area-title">
+                        <h3>TRAFFIC</h3>
+                        <ul>
+                            <li>Hourly</li>
+                            <li>Daily</li>
+                            <li>Weekly</li>
+                            <li>Monthly</li>
+                        </ul>
+                    </div>
+                    <div class="chart-area-size">
+                        <canvas id="areaChart"></canvas>
+                    </div>
                 </div>
-                <canvas id="areaChart" width="400" height="400"></canvas>
-
-            </div>
-            <!-- </div> -->
-            <!-- Bar Chart -->
-            <!-- <div class="chart-section-2"> -->
-            <div class="chart-bar">
-                <h3>DAILY TRAFFIC</h3>
-                <canvas id="barChart" width="400" height="400"></canvas>
-            </div>
-
-            <!-- Doughnut Chart -->
-            <div class="chart-doughnut">
-                <h3>MOBILE USERS</h3>
-                <canvas id="doughnutChart" width="400" height="400"></canvas>
-            </div>
-            <!-- </div> -->
-
+                <!-- Bar Chart -->
+                <div class="chart-bar">
+                    <h3>DAILY TRAFFIC</h3>
+                    <div class="chart-bar-size">
+                        <canvas id="barChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+                <!-- Doughnut Chart -->
+                <div class="chart-doughnut">
+                    <h3>MOBILE USERS</h3>
+                    <div class="chart-bar-size">
+                        <canvas id="doughnutChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </section>
             <section class="social-stats-section">
+                <h3>SOCIAL STATS</h3>
                 <div class="social-card">
                     <div class="social-icon">
                         <?xml version="1.0" encoding="utf-8"?>
@@ -157,34 +162,34 @@
                     <div class="member">
                         <img src="public/images/member-1.jpg" alt="Member 1">
                         <div class="member-text">
-                            <h3>Victoria Chels</h3>
+                            <p>Victoria Chels</p>
                             <a href="#">victoriachels@google.com</a>
-                            <p class="member-date">11/11/19</p>
                         </div>
+                        <p class="member-date">11/11/19</p>
                     </div>
                     <div class="member">
                         <img src="public/images/member-2.jpg" alt="Member 2">
                         <div class="member-text">
-                            <h3>Dale Byrd</h3>
+                            <p>Dale Byrd</p>
                             <a href="#">dalebyrd@google.com</a>
-                            <p class="member-date">11/11/19</p>
                         </div>
+                        <p class="member-date">11/11/19</p>
                     </div>
                     <div class="member">
                         <img src="public/images/member-3.jpg" alt="Member 3">
                         <div class="member-text">
-                            <h3>Diane Wood</h3>
+                            <p>Diane Wood</p>
                             <a href="#">dianewood@google.com</a>
-                            <p class="member-date">11/11/19</p>
                         </div>
+                        <p class="member-date">11/11/19</p>
                     </div>
                     <div class="member">
                         <img src="public/images/member-4.jpg" alt="Member 4">
                         <div class="member-text">
-                            <h3>Dan Oliver</h3>
+                            <p>Dan Oliver</p>
                             <a href="#">danoliver@google.com</a>
-                            <p class="member-date">11/11/19</p>
                         </div>
+                        <p class="member-date">11/11/19</p>
                     </div>
                 </div>
 
@@ -193,76 +198,86 @@
                     <div class="member">
                         <img src="public/images/member-1.jpg" alt="Member 1">
                         <div class="member-text">
-                            <h3>Victoria Chels responded to your comment</h3>
-                            <p class="activity-time">11/11/19</p>
+                            <p>Victoria Chels responded to your comment</p>
+                            <p class="member-date">11/11/19</p>
                         </div>
                     </div>
                     <div class="member">
                         <img src="public/images/member-2.jpg" alt="Member 2">
                         <div class="member-text">
-                            <h3>Dale Byrd created a blog</h3>
-                            <p class="activity-time">11/11/19</p>
+                            <p>Dale Byrd created a blog</p>
+                            <p class="member-date">11/11/19</p>
                         </div>
                     </div>
                     <div class="member">
                         <img src="public/images/member-3.jpg" alt="Member 3">
                         <div class="member-text">
-                            <h3>Diane Wood commented on your post</h3>
-                            <p class="activity-time">11/11/19</p>
+                            <p>Diane Wood commented on your post</p>
+                            <p class="member-date">11/11/19</p>
                         </div>
                     </div>
                     <div class="member">
                         <img src="public/images/member-4.jpg" alt="Member 4">
                         <div class="member-text">
-                            <h3>Dan Oliver liked your post</h3>
-                            <p class="activity-time">11/11/19</p>
+                            <p>Dan Oliver liked your post</p>
+                            <p class="member-date">11/11/19</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="message-user">
-                    <h2>MESSAGE USER</h2>
-                    <input class="search-user" type="text" placeholder="Search for User">
-                    <textarea id="write-message" cols="30" rows="10"></textarea>
-                    <button class="button-submit-message" type="submit">SEND</button>
-                </div>
-
-                <div class="settings">
-                    <h2>SETTINGS</h2>
-                    <form action="submit">
-                        <label for="email-notifications">Send Email Notifications</label>
-                        <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
-                                checked>
-                            <label class="onoffswitch-label" for="myonoffswitch">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                        </div>
-                        <label for="email-notifications">Set Profile to Public</label>
-                        <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
-                                checked>
-                            <label class="onoffswitch-label" for="myonoffswitch">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                        </div>
-                        <input type="text">
-                        <button class="button-submit-settings" type="submit">SAVE</button>
-                        <button class="button-cancel-settings" type="reset">CANCEL</button>
+                <section class="message-user">
+                    <h3>MESSAGE USER</h3>
+                    <form action="">
+                        <input class="search-user" type="text" placeholder="Search for User">
+                        <textarea id="write-message" placeholder="Message for user"></textarea>
+                        <button class="button-primary" type="submit">SEND</button>
                     </form>
-                </div>
+                </section>
+            </section>
 
+            <section class="settings">
+                <h3>SETTINGS</h3>
+                <div class="switch-toggle">
+                    <label class="switch-light switch-ios" style="width: 400px" onclick>
+                        <input type="checkbox">
+                        <strong>Send Email Notifications</strong>
+                        <span>
+                            <span>OFF</span>
+                            <span>ON</span>
+                            <a></a>
+                        </span>
+                    </label>
+                    <label class="switch-light switch-ios" style="width: 400px" onclick>
+                        <input type="checkbox">
+                        <strong>Set Profile to Public</strong>
+                        <span>
+                            <span>OFF</span>
+                            <span>ON</span>
+                            <a></a>
+                        </span>
+                    </label>
+                </div>
+                <select class="form-field" id="timezone">
+                    <option disabled value="select">Select a Timezone</option>
+                    <option value="est">Eastern Standard Time</option>
+                    <option value="mst">Mountain Standard Time</option>
+                    <option value="pst">Pacific Standard Time</option>
+                    <option value="ast">Alaska Standard Time</option>
+                    <option value="hst">Hawaii-Aleutian Standard Time</option>
+                </select>
+                <div class="settings-button">
+                    <button class="button-primary" id="save">SAVE</button>
+                    <button class="button-secondary" id="cancel">CANCEL</button>
+                </div>
             </section>
         </main>
     </div>
 
     <footer></footer>
+    <!-- CHART LIBRARY SCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/app.js"></script>
 </body>
-
 </html>

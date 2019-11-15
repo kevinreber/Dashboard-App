@@ -1,3 +1,12 @@
+//CHART COLORS
+const primary = 'rgb(116,119,191,.3)';
+const secondary = 'rgb(77,76,114,.8)';
+const tertiary = 'rgb(116,119,191,.8)';
+
+const primaryHover = 'rgb(116,119,191)';
+const secondaryHover = 'rgb(77,76,114)';
+const tertiaryHover = 'rgb(116,119,191)';
+
 //AREA CHART
 var ctx1 = document.getElementById('areaChart').getContext('2d');
 var areaChart = new Chart(ctx1, {
@@ -9,8 +18,8 @@ var areaChart = new Chart(ctx1, {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
             label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: primary,
+            borderColor: secondary,
             data: [0, 10, 5, 2, 20, 30, 45]
         }]
     },
@@ -32,7 +41,6 @@ let barChart = new Chart(ctx2, {
             data: [10, 20, 30, 40, 50, 60, 70]
         }]
     }
-    // options: options
 });
 
 //Doughnut Chart
@@ -40,16 +48,22 @@ let ctx3 = document.getElementById('doughnutChart').getContext('2d');
 let doughnutChart = new Chart(ctx3, {
     type: 'doughnut',
     data: {
-        datasets: [{
-            data: [10, 20, 30]
-        }],
-
-        // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
-            'Red',
-            'Yellow',
-            'Blue'
-        ]
+            'Phones',
+            'Tablets',
+            'Desktops'
+        ],
+        datasets: [{
+            backgroundColor: [tertiary, secondary, primary],
+            // hoverBackgroundColor: [tertiaryHover],
+            data: [65, 10, 25]
+        }]
+    },
+    options: {
+        animation: {
+            animateScale: true
+        }
     }
+
 
 });

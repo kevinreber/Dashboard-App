@@ -1,24 +1,20 @@
 button {
-    padding: 10px auto;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    width: 100%;
     border-radius: 5px;
-    display: block;
+    display: inline-block;
     margin-bottom: 10px;
 }
 
-// .button {
-//     &-submit {
+.button {
+    &-primary {
+        background-color: $color-primary;
+        color: #ffffff;
+    }
 
-//         &-message,
-//         &-settings {
-//             background-color: $color-primary;
-//         }
-//     }
-
-//     &-cancel-settings {
-//         background-color: $color-page-title;
-//     }
-// }
-
-.button-submit-message {
-    background-color: $color-primary;
+    &-secondary {
+        background-color: $color-page-title;
+        color: $color-section-title;
+    }
 }

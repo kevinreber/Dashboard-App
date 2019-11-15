@@ -1,16 +1,80 @@
 .grid-container {
     height: 100vh;
     display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto;
 }
 
 main {
-    width: 95%;
+    width: 90%;
     margin: auto;
 }
 
-@media (min-width: $desktop) {
+@media (min-width: $medium) {
+    .header {
+        grid-area: header;
+    }
+
+    .nav-bar {
+        grid-area: navigation;
+    }
+
+    .widgets {
+        grid-area: widgets;
+    }
+
+    .chart-area {
+        grid-area: chartArea;
+    }
+
+    .chart-bar {
+        grid-area: chartBar;
+    }
+
+    .chart-doughnut {
+        grid-area: chartDoughnut;
+
+    }
+
+    .social-stats {
+        grid-area: social;
+    }
+
+    .new-members {
+        grid-area: newMembers;
+    }
+
+    .recent-activity {
+        grid-area: recentActivity;
+    }
+
+    .message-user {
+        grid-area: messageUser;
+    }
+
+    .settings {
+        grid-area: settings;
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "widgets widgets"
+            "chartArea chartArea"
+            "chartBar chartDoughnut"
+            "social social"
+            "newMembers recentActivity"
+            "messageUser settings";
+    }
+
     .grid-container {
-        grid-template-columns: 90px repeat(3, 1fr);
-        grid-template-rows: 70px .5fr repeat(2, 2fr) 1fr repeat(2, 2fr);
+
+        grid-template-columns: 90px 1fr;
+        grid-template-areas:
+            "header header"
+            "navigation main";
     }
 }
