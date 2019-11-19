@@ -23,7 +23,10 @@
         align-items: center;
         justify-content: flex-end;
         margin-right: 150px;
-        padding: 15px 0;
+        padding-top: 0;
+        padding-bottom: 15px;
+        padding-right: 0;
+        padding-left: 0;
         /* simulate default browser focus outlines on the switch,
     when the inputs are focused.
    */
@@ -361,12 +364,19 @@
     }
 
     .switch-ios.switch-light>span {
+        margin-right: 5rem;
         display: block;
         width: 25%;
         height: 2em;
         background-color: #D8D9DB;
         border-radius: 1.75em;
         transition: all .4s ease-out;
+    }
+
+    @media (min-width: $medium) {
+        .switch-ios.switch-light>span {
+            margin-right: 0;
+        }
     }
 
     .switch-ios.switch-light>span span {

@@ -3,8 +3,6 @@
         margin: 0;
         display: inline-block;
     }
-
-
 }
 
 .dashboard {
@@ -24,22 +22,34 @@ input {
     width: 45%;
 }
 
-
 textarea {
     width: 100%;
 }
 
-.alert {
-    display: block;
+#alert-bar {
     width: 100%;
     color: #ffffff;
     padding: .5px;
     background-color: $color-secondary;
-    text-align: center;
+    font-size: 12px;
+}
+
+.alert-banner{
+    display: flex;
+    justify-content: space-between;
+    p{
+        margin: 1rem;
+    }
 }
 
 input,
 textarea,
 .alert {
     border-radius: 5px;
+}
+
+@media (min-width: $medium) {
+    #alert-bar {
+        font-size: 16px;
+    }
 }

@@ -22,38 +22,53 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: auto 1rem;
     }
 
     &-text {
-        width: 60%;
+        width: 75%;
+
+        & h3 {
+            margin: 0;
+            font-size: 24px;
+            color: $color-tertiary;
+        }
     }
 
-    &-icon,
     &-text {
         margin-top: auto;
         margin-bottom: auto;
     }
 
     &-stats {
-        font-size: 48px;
+        font-size: 40px;
         font-weight: 300;
     }
 
 }
 
-@media (min-width: $desktop) {
-
+@media (min-width: $medium) {
     .social {
-        &-stats-section {
-            grid-row-start: 2;
-            grid-row-end: -1;
+        &-cards {
+            display: flex;
+            justify-content: space-between;
         }
 
         &-card {
-            display: flex;
-            flex-direction: row;
+            width: 30%;
+        }
+
+        &-icon {
+            width: 6rem;
+            height: 6rem;
+        }
+    
+        &-text {
+            width: 60%;
+        }
+        &-stats {
+            font-size: 56px;
         }
 
     }
-
 }

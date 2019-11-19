@@ -1,20 +1,32 @@
 #timezone {
     border: 1px solid $color-section-title;
     background-color: $color-fill;
-    padding: 9px;
+    padding: 1rem;
     margin-bottom: 1rem;
     width: 100%;
-    
 }
 
-// .switch-light{
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-end;
-// }
-
-.switch-toggle{
+.switch-toggle {
     flex: display;
     justify-content: space-between;
+}
+
+@media (min-width: $medium) {
+    // .settings-content, .message-content{
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+
+    .message-user,
+    .settings-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 84%;
+    }
+
+    .settings-button {
+        display: flex;
+        justify-content: space-between;
+    }
 }

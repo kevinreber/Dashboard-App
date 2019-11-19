@@ -1,66 +1,133 @@
+body{
+    width: 100vw;
+}
+
+//GRID CONTAINER
 .grid-container {
     height: 100vh;
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: 100%;
     grid-template-rows: auto;
+    grid-template-areas:
+        "head"
+        "navigation"
+        "main";
 }
 
-main {
-    width: 90%;
-    margin: auto;
+//GRID AREA
+.header {
+    grid-area: head;
 }
 
+.nav-bar {
+    grid-area: navigation;
+}
+
+.grid-content {
+    grid-area: main;
+}
+
+.widgets {
+    grid-area: widgets;
+}
+
+.chart-area {
+    grid-area: chartArea;
+}
+
+.chart-bar {
+    grid-area: chartBar;
+}
+
+.chart-doughnut {
+    grid-area: chartDoughnut;
+
+}
+
+.social-stats-section {
+    grid-area: social;
+}
+
+.new-members {
+    grid-area: newMembers;
+}
+
+.recent-activity {
+    grid-area: recentActivity;
+}
+
+.message-user {
+    grid-area: messageUser;
+}
+
+.settings {
+    grid-area: settings;
+}
+
+//PADDING TO EACH MAIN SECTION
+.widgets,
+.chart-area,
+.chart-bar,
+.chart-doughnut,
+.social-stats-section,
+.new-members,
+.recent-activity,
+.message-user,
+.settings {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+//BORDER TO EACH SECTION
+.chart-area,
+.chart-bar,
+.chart-doughnut,
+.social-stats-section,
+.new-members,
+.recent-activity,
+.message-user {
+    border-bottom: 1px solid $color-section-title;
+}
+
+
+//FIT CHARTS TO VIEW
+.chart {
+
+    &-area,
+    &-bar,
+    &-doughnut {
+        margin-right: auto;
+        margin-left: auto;
+        width: 95vw;
+    }
+}
+
+
+
+//MEDIA QUERIES
 @media (min-width: $medium) {
-    .header {
-        grid-area: header;
-    }
 
-    .nav-bar {
-        grid-area: navigation;
-    }
-
-    .widgets {
-        grid-area: widgets;
-    }
-
-    .chart-area {
-        grid-area: chartArea;
-    }
-
-    .chart-bar {
-        grid-area: chartBar;
-    }
-
-    .chart-doughnut {
-        grid-area: chartDoughnut;
-
-    }
-
-    .social-stats {
-        grid-area: social;
-    }
-
+    //SIDE BORDER FOR DESKTOP VIEW
+    .chart-bar,
+    .message-user,
     .new-members {
-        grid-area: newMembers;
-    }
-
-    .recent-activity {
-        grid-area: recentActivity;
+        border-right: 1px solid $color-section-title;
     }
 
     .message-user {
-        grid-area: messageUser;
+        border-bottom: none;
     }
 
-    .settings {
-        grid-area: settings;
+    .grid-container {
+        grid-template-columns: 90px 1fr;
+        grid-template-areas:
+            "head head"
+            "navigation main";
     }
 
-    main {
-        grid-area: main;
+    .grid-content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 50%;
+        // grid-template-rows: auto;
         grid-template-areas:
             "widgets widgets"
             "chartArea chartArea"
@@ -70,11 +137,41 @@ main {
             "messageUser settings";
     }
 
-    .grid-container {
+    // .widgets,
+    // .chart-area,
+    // .social-stats-section {
+    //     grid-column: 1 / span 2;
+    // }
 
-        grid-template-columns: 90px 1fr;
-        grid-template-areas:
-            "header header"
-            "navigation main";
-    }
+    // .chart-bar,
+    // .new-members,
+    // .message-user {
+    //     grid-column: 1 / span 1;
+    // }
+
+    // .chart-doughnut,
+    // .recent-activity,
+    // .settings {
+    //     grid-column: 2 / span 1;
+    // }
+
+    //FIT CHARTS TO VIEW
+    // .chart {
+
+    //     &-area,
+    //     &-bar,
+    //     &-doughnut {
+    //         margin-right: 0;
+    //         margin-left: 0;
+    //     }
+
+    //     &-area-size {
+    //         width: 90vw;
+    //     }
+
+    //     &-bar-size,
+    //     &-doughnut-size {
+    //         width: 45vw;
+    //     }
+    // }
 }

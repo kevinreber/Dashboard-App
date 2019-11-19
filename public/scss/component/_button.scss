@@ -18,3 +18,11 @@ button {
         color: $color-section-title;
     }
 }
+
+@media (min-width: $medium){
+
+    #save, #cancel{
+        width: 48%;
+    }
+
+}

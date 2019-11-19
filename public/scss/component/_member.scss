@@ -5,38 +5,48 @@
     justify-content: space-between;
 }
 
+.new-members .member {
+    &-date {
+        margin-left: auto;
+    }
+}
+
 .member {
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
+    margin: 1rem 1rem 1rem 0;
 
-    a{
+
+    a {
         text-decoration: none;
         color: $color-primary;
     }
 
     p {
-        margin: 0;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     img {
         margin-right: .7rem;
     }
 
-    // &-date {
-//
-    // }
+
 
     &-text {
         display: flex;
         flex-direction: column;
-     
+
     }
 }
 
 .search-user,
 #write-message {
     margin-bottom: 10px;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid lightgray;
 }
