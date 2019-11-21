@@ -1,6 +1,10 @@
 .header {
     background-color: $color-primary;
     color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 .user{
     display: flex;
@@ -14,21 +18,5 @@
 
     &-image{
         border: 2.2px solid #ffffff;
-    }
-}
-
-@media (min-width: $desktop){
-    .header {
-        display: flex;
-        flex-direction: row;
-        grid-column-start: 1;
-        grid-column-end: -1;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    
-        &.user {
-            display: flex;
-            justify-content: flex-end;
-        }
     }
 }

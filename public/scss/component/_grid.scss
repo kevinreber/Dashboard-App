@@ -1,12 +1,8 @@
-body{
-    width: 100vw;
-}
-
 //GRID CONTAINER
 .grid-container {
-    height: 100vh;
+    // height: 100vh;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
         "head"
@@ -25,50 +21,18 @@ body{
 
 .grid-content {
     grid-area: main;
-}
-
-.widgets {
-    grid-area: widgets;
-}
-
-.chart-area {
-    grid-area: chartArea;
-}
-
-.chart-bar {
-    grid-area: chartBar;
-}
-
-.chart-doughnut {
-    grid-area: chartDoughnut;
-
-}
-
-.social-stats-section {
-    grid-area: social;
-}
-
-.new-members {
-    grid-area: newMembers;
-}
-
-.recent-activity {
-    grid-area: recentActivity;
-}
-
-.message-user {
-    grid-area: messageUser;
-}
-
-.settings {
-    grid-area: settings;
+    display: grid;
+    grid-template-rows: auto;
 }
 
 //PADDING TO EACH MAIN SECTION
-.widgets,
-.chart-area,
-.chart-bar,
-.chart-doughnut,
+.widgets{
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+.traffic,
+.daily-traffic,
+.mobile-users,
 .social-stats-section,
 .new-members,
 .recent-activity,
@@ -78,9 +42,9 @@ body{
 }
 
 //BORDER TO EACH SECTION
-.chart-area,
-.chart-bar,
-.chart-doughnut,
+.traffic,
+.daily-traffic,
+.mobile-users,
 .social-stats-section,
 .new-members,
 .recent-activity,
@@ -88,26 +52,11 @@ body{
     border-bottom: 1px solid $color-section-title;
 }
 
-
-//FIT CHARTS TO VIEW
-.chart {
-
-    &-area,
-    &-bar,
-    &-doughnut {
-        margin-right: auto;
-        margin-left: auto;
-        width: 95vw;
-    }
-}
-
-
-
 //MEDIA QUERIES
 @media (min-width: $medium) {
 
     //SIDE BORDER FOR DESKTOP VIEW
-    .chart-bar,
+    .daily-traffic,
     .message-user,
     .new-members {
         border-right: 1px solid $color-section-title;
@@ -118,60 +67,49 @@ body{
     }
 
     .grid-container {
-        grid-template-columns: 90px 1fr;
+        grid-template-columns: 80px 1fr;
         grid-template-areas:
             "head head"
             "navigation main";
     }
 
     .grid-content {
-        display: grid;
         grid-template-columns: 50%;
-        // grid-template-rows: auto;
-        grid-template-areas:
-            "widgets widgets"
-            "chartArea chartArea"
-            "chartBar chartDoughnut"
-            "social social"
-            "newMembers recentActivity"
-            "messageUser settings";
     }
 
-    // .widgets,
-    // .chart-area,
-    // .social-stats-section {
-    //     grid-column: 1 / span 2;
-    // }
+    .widgets,
+    .traffic,
+    .social-stats-section {
+        grid-column: 1 / span 2;
+    }
 
-    // .chart-bar,
-    // .new-members,
-    // .message-user {
-    //     grid-column: 1 / span 1;
-    // }
+    .daily-traffic,
+    .new-members,
+    .message-user {
+        grid-column: 1 / span 1;
+    }
 
-    // .chart-doughnut,
-    // .recent-activity,
-    // .settings {
-    //     grid-column: 2 / span 1;
-    // }
+    .mobile-users,
+    .recent-activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
 
     //FIT CHARTS TO VIEW
-    // .chart {
-
-    //     &-area,
-    //     &-bar,
-    //     &-doughnut {
+  
+    //     .traffic,
+    //     .daily-traffic,
+    //    .mobile-users {
     //         margin-right: 0;
     //         margin-left: 0;
     //     }
 
-    //     &-area-size {
+    //     .traffic-size {
     //         width: 90vw;
     //     }
 
-    //     &-bar-size,
-    //     &-doughnut-size {
+    //     .daily-traffic-size,
+    //     .mobile-users-size {
     //         width: 45vw;
     //     }
-    // }
 }

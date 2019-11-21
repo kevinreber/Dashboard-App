@@ -33,23 +33,22 @@ h3 {
   font-size: 16px;
 }
 
+#app-name {
+  font-size: 40px;
+}
+
 @media (min-width: 1024px) {
   h1 {
     font-size: 36px;
   }
 }
 h3 {
-  font-size: 15px;
-}
-
-body {
-  width: 100vw;
+  font-size: 18px;
 }
 
 .grid-container {
-  height: 100vh;
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: "head" "navigation" "main";
 }
@@ -64,48 +63,18 @@ body {
 
 .grid-content {
   grid-area: main;
+  display: grid;
+  grid-template-rows: auto;
 }
 
 .widgets {
-  grid-area: widgets;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 
-.chart-area {
-  grid-area: chartArea;
-}
-
-.chart-bar {
-  grid-area: chartBar;
-}
-
-.chart-doughnut {
-  grid-area: chartDoughnut;
-}
-
-.social-stats-section {
-  grid-area: social;
-}
-
-.new-members {
-  grid-area: newMembers;
-}
-
-.recent-activity {
-  grid-area: recentActivity;
-}
-
-.message-user {
-  grid-area: messageUser;
-}
-
-.settings {
-  grid-area: settings;
-}
-
-.widgets,
-.chart-area,
-.chart-bar,
-.chart-doughnut,
+.traffic,
+.daily-traffic,
+.mobile-users,
 .social-stats-section,
 .new-members,
 .recent-activity,
@@ -114,9 +83,9 @@ body {
   padding: 1rem 1.5rem 1.5rem 1.5rem;
 }
 
-.chart-area,
-.chart-bar,
-.chart-doughnut,
+.traffic,
+.daily-traffic,
+.mobile-users,
 .social-stats-section,
 .new-members,
 .recent-activity,
@@ -124,14 +93,8 @@ body {
   border-bottom: 1px solid #939393;
 }
 
-.chart-area, .chart-bar, .chart-doughnut {
-  margin-right: auto;
-  margin-left: auto;
-  width: 95vw;
-}
-
 @media (min-width: 768px) {
-  .chart-bar,
+  .daily-traffic,
 .message-user,
 .new-members {
     border-right: 1px solid #939393;
@@ -142,14 +105,30 @@ body {
   }
 
   .grid-container {
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 80px 1fr;
     grid-template-areas: "head head" "navigation main";
   }
 
   .grid-content {
-    display: grid;
     grid-template-columns: 50%;
-    grid-template-areas: "widgets widgets" "chartArea chartArea" "chartBar chartDoughnut" "social social" "newMembers recentActivity" "messageUser settings";
+  }
+
+  .widgets,
+.traffic,
+.social-stats-section {
+    grid-column: 1/span 2;
+  }
+
+  .daily-traffic,
+.new-members,
+.message-user {
+    grid-column: 1/span 1;
+  }
+
+  .mobile-users,
+.recent-activity,
+.settings {
+    grid-column: 2/span 1;
   }
 }
 .user-image, .member img {
@@ -181,6 +160,10 @@ body {
 .header {
   background-color: #7477BF;
   color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .user {
@@ -196,20 +179,6 @@ body {
   border: 2.2px solid #ffffff;
 }
 
-@media (min-width: 1024px) {
-  .header {
-    display: flex;
-    flex-direction: row;
-    grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  .header.user {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
 .social-card {
   border: 1px solid #939393;
   border-radius: 5px;
