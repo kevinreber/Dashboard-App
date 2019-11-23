@@ -7,8 +7,9 @@ const alertBar = selectElementById('alert-bar');
 const bell = selectElementById('bell');
 const popUp = selectElementById('notification-pop-up');
 const ul = selectElementById('notification-list');
-const li = document.querySelectorAll('.close-notification');
+const trafficList = selectElementById('traffic-list');
 const badge = document.querySelector('.badge');
+
 
 //CHART COLORS
 const colorPrimary = 'rgb(116,119,191,.3)';

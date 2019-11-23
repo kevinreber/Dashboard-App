@@ -8,7 +8,7 @@ function createChart(canvas, type, data, options) {
     return chart;
 }
 
-const data = {
+const trafficData = {
     hourly: {
         labels: ['8am', '9am,', '10am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'],
         data: [2, 0, 1, 0, 2, 4, 1, 2, 0, 3]
@@ -32,20 +32,12 @@ const data = {
 
 }
 
-//select li item user clicks
-    //use text.content.tolowercase() to take text
-    //use text to choose which datasets.data information to get
-//select .active from traffic-buttons
-    //remove .active
-    //add .active to new active-button
-
-
 //CHART DATA
-let trafficData = {
+let displayTrafficData = {
     //labels are linked to datasets.data, if no labels are defined datasets.data will not display
-    labels: data.weekly.labels,
+    labels: trafficData.weekly.labels,
     datasets: [{
-        data: data.weekly.data,
+        data: trafficData.weekly.data,
         //Stylize
         backgroundColor: colorPrimary,
         borderColor: colorSecondary,
@@ -55,7 +47,7 @@ let trafficData = {
     }]
 }
 
-let trafficOptions = {
+let displayTrafficOptions = {
     aspectRatio: 2.5,
     animation: {
         duration: 0
@@ -75,10 +67,10 @@ let trafficOptions = {
 }
 
 const dailyData = {
-    labels: data.daily.labels,
+    labels: trafficData.daily.labels,
     datasets: [{
         //Bars are measured in units of 10 
-        data: data.daily.data,
+        data: trafficData.daily.data,
         backgroundColor: colorPrimary,
         borderColor: colorSecondary,
         borderWidth: 1,
@@ -137,9 +129,9 @@ let trafficChart = new Chart(trafficCanvas, {
     // The type of chart we want to create
     type: 'line',
     // The data for our dataset
-    data: trafficData,
+    data: displayTrafficData,
     // Configuration options go here
-    options: trafficOptions
+    options: displayTrafficOptions
 });
 
 //DAILY TRAFFIC CHART
@@ -150,14 +142,24 @@ const dailyChart = createChart(dailyCanvas, 'bar', dailyData, dailyOptions);
 const mobileCanvas = selectElementById('mobile-users').getContext('2d');
 const mobileUser = createChart(mobileCanvas, 'doughnut', mobileData, mobileOptions);
 
-//Add data
-function changeData(chart, newLabels) {
-    console.log('works');
-    console.log(chart.data.labels.value);
+//This event listens to if one of the traffic-buttons are selected
+trafficList.addEventListener('click', (e) => {
+    //select li item user clicks
+    const activeItem = e.target;
+    //use text.content.tolowercase() to take text
+    const activeItemText = e.target.textContent.toLowerCase();
+    //select current current active li item
+    let currentActiveItem = document.querySelector('.active');
+    //remove .active
+    currentActiveItem.classList.remove('active');
+    //add .active to new active-button
+    activeItem.classList.add('active');
+    //use activeItemText to choose which datasets.data information to get
+    //trafficData.datasets[0].data = trafficData.activeItemText.data;
 
-    chart.data.labels = [];
-    newLabels.forEach(function (label) {
-        chart.data.labels.push(label);
-    })
-    chart.update();
-}
+    console.log(displayTrafficData.datasets[0].data);
+    console.log(activeItemText);
+
+    console.log(trafficData.activeItemText.labels);
+    console.log(trafficData.hourly.labels);
+});
