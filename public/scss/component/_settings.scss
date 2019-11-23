@@ -2,7 +2,8 @@
     border: 1px solid $color-section-title;
     background-color: $color-fill;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
     width: 100%;
 }
 
@@ -22,7 +23,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 84%;
     }
 
     .settings-button {

@@ -19,12 +19,16 @@
 
 <body>
     <div class="grid-container">
-        <!-- Header *need to fix h1 font-size -->
         <header class="header">
             <h1 id="app-name">Dashboard App</h1>
-
             <div class="user">
-                <img class="bell" src="public/icons/icon-bell.svg" alt="Notifcation Bell">
+                <a href="#" class="notification">
+                    <span class="badge">4</span>
+                    <img id="bell" class="bell" src="public/icons/icon-bell.svg" alt="Notification Bell">
+                    <div id="notification-pop-up">
+                        <ul id="notification-list"></ul>
+                    </div>
+                </a>
                 <img class="user-image" src="public/images/me.jpg" alt="Profile Image">
                 <h3 class="user-name">Kevin Reebz</h3>
             </div>
@@ -32,7 +36,8 @@
         <!-- Side nav-bar -->
         <nav class="nav-bar">
             <div class="nav-items">
-                <img class="nav-icon nav-selected" src="public/icons/icon-dashboard.svg" alt="Dashboard">
+                <span class="nav-selection"></span>
+                <img class="nav-icon nav-chosen" src="public/icons/icon-dashboard.svg" alt="Dashboard">
                 <img class="nav-icon" src="public/icons/icon-members.svg" alt="Members">
                 <img class="nav-icon" src="public/icons/icon-visits.svg" alt="Visits">
                 <img class="nav-icon" src="public/icons/icon-settings.svg" alt="Settings">
@@ -42,10 +47,12 @@
             <!-- Page Widgets -->
             <section class="widgets">
                 <div class="dashboard">
-                    <h1>Dashboard</h1>
-                    <input class="search-bar" type="text" placeholder="Search...">
+                    <h1 class="page-title">Dashboard</h1>
+                    <div class="search">
+                        <input class="search-bar" type="text" placeholder="Search...">
+                    </div>
                 </div>
-            <!-- Alert Banner -->
+                <!-- Alert Banner -->
                 <div id="alert-bar" class="alert">
                 </div>
             </section>
@@ -55,10 +62,10 @@
                 <div class="chart-area-title">
                     <h3>TRAFFIC</h3>
                     <ul>
-                        <li>Hourly</li>
-                        <li>Daily</li>
-                        <li>Weekly</li>
-                        <li>Monthly</li>
+                        <li class="traffic-buttons hourly">Hourly</li>
+                        <li class="traffic-buttons daily">Daily</li>
+                        <li class="traffic-buttons weekly active">Weekly</li>
+                        <li class="traffic-buttons monthly">Monthly</li>
                     </ul>
                 </div>
                 <div class="traffic-size">
@@ -233,9 +240,9 @@
                 <h3>MESSAGE USER</h3>
                 <div class="message-content">
                     <form action="">
-                        <input class="search-user" type="text" placeholder="Search for User">
+                        <input class="search-user" id="search-user" type="text" placeholder="Search for User">
                         <textarea id="write-message" placeholder="Message for user"></textarea>
-                        <button class="button-primary" type="submit">SEND</button>
+                        <button class="button-primary" id="send" type="button">SEND</button>
                     </form>
                 </div>
             </section>
@@ -279,13 +286,13 @@
             </section>
         </main>
     </div>
-
-    <footer></footer>
     <!-- CHART LIBRARY SCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-    <script src="js/charts.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/message.js"></script>
 </body>
 
 </html>

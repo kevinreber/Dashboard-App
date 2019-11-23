@@ -1,14 +1,21 @@
-.widgets {
-    & h1 {
-        margin: 0;
-        display: inline-block;
-    }
-}
-
 .dashboard {
     display: flex;
     justify-content: space-between;
-    margin: 10px auto;
+    margin: 0 auto 12px auto;
+}
+
+.search {
+    background-color: $color-page-title;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    border-bottom-left-radius: 10px;
+}
+
+.page-title{
+    margin: auto;
+    padding-right: 1.5rem;
 }
 
 input,
@@ -30,14 +37,16 @@ textarea {
     width: 100%;
     color: #ffffff;
     padding: .5px;
+    margin-right: 1.5rem;
     background-color: $color-secondary;
     font-size: 12px;
 }
 
-.alert-banner{
+.alert-banner {
     display: flex;
     justify-content: space-between;
-    p{
+
+    p {
         margin: 1rem;
     }
 }

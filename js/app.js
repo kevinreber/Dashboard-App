@@ -1,13 +1,20 @@
-const alert = document.getElementById('alert-bar');
+//SELECTOR FUNCTION
+function selectElementById(id){
+    return document.getElementById(id);
+}
 
-alert.innerHTML = `
-<div class="alert-banner">
-    <p><strong>ALERT:</strong> You have <strong>5</strong> overdue tasks to complete</p>
-    <p class="alert-banner-close">x</p>
-</div>`;
+const alertBar = selectElementById('alert-bar');
+const bell = selectElementById('bell');
+const popUp = selectElementById('notification-pop-up');
+const ul = selectElementById('notification-list');
+const li = document.querySelectorAll('.close-notification');
+const badge = document.querySelector('.badge');
 
-alert.addEventListener('click', (e) =>{
-    if (e.target.classList.contains('alert-banner-close')){
-        alert.style.display = 'none';
-    }
-});
+//CHART COLORS
+const colorPrimary = 'rgb(116,119,191,.3)';
+const colorSecondary = 'rgb(77,76,114,.8)';
+const colorTertiary = 'rgb(116,119,191,.8)';
+
+const colorPrimaryHover = 'rgb(116,119,191)';
+const colorSecondaryHover = 'rgb(77,76,114)';
+const colorTertiaryHover = 'rgb(116,119,191)';

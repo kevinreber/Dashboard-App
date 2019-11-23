@@ -21,7 +21,7 @@ span,
 h2,
 h3 {
   color: #939393;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -68,7 +68,6 @@ h3 {
 }
 
 .widgets {
-  padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
 
@@ -151,6 +150,21 @@ h3 {
   display: inline-block;
 }
 
+.traffic-buttons {
+  cursor: pointer;
+}
+.traffic-buttons:hover {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: #60b960;
+  border-radius: 5px;
+  padding: 8px;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .chart-area-title ul li {
     margin-left: 15px;
@@ -171,14 +185,70 @@ h3 {
   justify-content: flex-end;
   margin: 0.6rem 0.6rem;
 }
-.user img, .user h3 {
-  margin: auto 8px;
+.user img,
+.user h3 {
+  margin: auto 10px;
   color: #ffffff;
 }
 .user-image {
   border: 2.2px solid #ffffff;
 }
 
+.notification {
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  border-right: 1px solid #4D4c72;
+  margin-right: 2rem;
+  padding-right: 2rem;
+}
+.notification-card {
+  background-color: #555555;
+  color: #ffffff;
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.notification-card:hover {
+  background-color: #858585;
+}
+.notification .badge {
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  font-size: 85%;
+  padding: 4px 8px;
+  margin-right: 2.1rem;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #60b960;
+  color: #ffffff;
+}
+.notification .badge:hover {
+  background-color: red;
+}
+
+#notification-pop-up {
+  position: absolute;
+  top: 50%;
+  right: 150%;
+  display: none;
+}
+#notification-list {
+  width: 175%;
+  padding: 0;
+  list-style-type: none;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .notification-card {
+    padding: 0.8rem;
+  }
+}
 .social-card {
   border: 1px solid #939393;
   border-radius: 5px;
@@ -294,7 +364,8 @@ hr {
   border: 1px solid #939393;
   background-color: #f5f5f5;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
@@ -309,7 +380,6 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 84%;
   }
 
   .settings-button {
@@ -329,10 +399,20 @@ hr {
 .nav-icon {
   margin: 0.6rem 0.6rem;
   width: 2rem;
+  opacity: 0.3;
 }
-
-.nav-selected {
-  border-bottom: 5px solid green;
+.nav-icon:hover {
+  opacity: 1;
+}
+.nav-selection {
+  position: absolute;
+  height: 2.8rem;
+  top: 110px;
+  left: 0;
+  border-left: 5px solid #60b960;
+}
+.nav-chosen {
+  opacity: 1;
 }
 
 @media (min-width: 1024px) {
@@ -346,15 +426,24 @@ hr {
     grid-column-end: 2;
   }
 }
-.widgets h1 {
-  margin: 0;
-  display: inline-block;
-}
-
 .dashboard {
   display: flex;
   justify-content: space-between;
-  margin: 10px auto;
+  margin: 0 auto 12px auto;
+}
+
+.search {
+  background-color: #dedede;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+  border-bottom-left-radius: 10px;
+}
+
+.page-title {
+  margin: auto;
+  padding-right: 1.5rem;
 }
 
 input,
@@ -376,6 +465,7 @@ textarea {
   width: 100%;
   color: #ffffff;
   padding: 0.5px;
+  margin-right: 1.5rem;
   background-color: #4D4c72;
   font-size: 12px;
 }
@@ -407,18 +497,29 @@ button {
   display: inline-block;
   margin-bottom: 10px;
 }
+button:hover {
+  cursor: pointer;
+}
 
 .button-primary {
   background-color: #7477BF;
   color: #ffffff;
 }
+.button-primary:hover {
+  background-color: #4D4c72;
+}
 .button-secondary {
   background-color: #dedede;
   color: #939393;
 }
+.button-secondary:hover {
+  background-color: #939393;
+  color: #dedede;
+}
 
 @media (min-width: 768px) {
-  #save, #cancel {
+  #save,
+#cancel {
     width: 48%;
   }
 }
@@ -778,7 +879,6 @@ button {
   }
 
   .switch-ios.switch-light > span {
-    margin-right: 5rem;
     display: block;
     width: 25%;
     height: 2em;

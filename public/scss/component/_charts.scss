@@ -11,8 +11,24 @@
     }
 }
 
-@media (min-width: $medium){
-    .chart-area-title {    
+.traffic-buttons {
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.active {
+    background-color: $color-selector;
+    border-radius: 5px;
+    padding: 8px;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+@media (min-width: $medium) {
+    .chart-area-title {
         ul {
             li {
                 margin-left: 15px;

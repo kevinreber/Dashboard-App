@@ -5,23 +5,36 @@ button {
     border-radius: 5px;
     display: inline-block;
     margin-bottom: 10px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .button {
     &-primary {
         background-color: $color-primary;
         color: #ffffff;
+
+        &:hover {
+            background-color: $color-secondary;
+        }
     }
 
     &-secondary {
         background-color: $color-page-title;
         color: $color-section-title;
+
+        &:hover {
+            background-color: $color-section-title;
+            color: $color-page-title;
+        }
     }
 }
 
-@media (min-width: $medium){
+@media (min-width: $medium) {
 
-    #save, #cancel{
+    #save,
+    #cancel {
         width: 48%;
     }
 

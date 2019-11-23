@@ -1,6 +1,5 @@
 //GRID CONTAINER
 .grid-container {
-    // height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -27,9 +26,9 @@
 
 //PADDING TO EACH MAIN SECTION
 .widgets{
-    padding-right: 1.5rem;
     padding-left: 1.5rem;
 }
+
 .traffic,
 .daily-traffic,
 .mobile-users,
@@ -94,22 +93,4 @@
     .settings {
         grid-column: 2 / span 1;
     }
-
-    //FIT CHARTS TO VIEW
-  
-    //     .traffic,
-    //     .daily-traffic,
-    //    .mobile-users {
-    //         margin-right: 0;
-    //         margin-left: 0;
-    //     }
-
-    //     .traffic-size {
-    //         width: 90vw;
-    //     }
-
-    //     .daily-traffic-size,
-    //     .mobile-users-size {
-    //         width: 45vw;
-    //     }
 }
