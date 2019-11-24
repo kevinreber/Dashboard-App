@@ -1,27 +1,19 @@
-//This function creates a constant chart
-function createChart(canvas, type, data, options) {
-    const chart = new Chart(canvas, {
-        type: type,
-        data: data,
-        options: options
-    });
-    return chart;
-}
-
+//CHART DATA
 const trafficData = {
+    //labels are linked to datasets.data, if no labels are defined datasets.data will not display
     hourly: {
         labels: ['8am', '9am,', '10am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'],
-        data: [2, 0, 1, 0, 2, 4, 1, 2, 0, 3]
+        data: [2.25, 3.5, 1.5, 2.75, 2.5, 4.25, 1.5, 2, .5, 3.75]
     },
 
     daily: {
         labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-        data: [15, 20, 30, 40, 50, 60, 70]
+        data: [50, 20, 35, 90, 50, 65, 70]
     },
 
     weekly: {
         labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '18-24', '25-31'],
-        data: [750, 1250, 1000, 2000, 15000, 1750, 1250, 1850, 2250, 1500, 2500]
+        data: [750, 1250, 1000, 1900, 1050, 1750, 1250, 1850, 2250, 1500, 2500]
     },
 
     monthly: {
@@ -32,18 +24,17 @@ const trafficData = {
 
 }
 
-//CHART DATA
+//CHART DISPLAY
 let displayTrafficData = {
-    //labels are linked to datasets.data, if no labels are defined datasets.data will not display
     labels: trafficData.weekly.labels,
     datasets: [{
         data: trafficData.weekly.data,
-        //Stylize
         backgroundColor: colorPrimary,
         borderColor: colorSecondary,
         borderWidth: 1,
         pointHoverBackgroundColor: colorPrimaryHover,
-        pointHoverRadius: 5
+        pointHoverRadius: 5,
+        lineTension: 0
     }]
 }
 
@@ -69,7 +60,6 @@ let displayTrafficOptions = {
 const dailyData = {
     labels: trafficData.daily.labels,
     datasets: [{
-        //Bars are measured in units of 10 
         data: trafficData.daily.data,
         backgroundColor: colorPrimary,
         borderColor: colorSecondary,
@@ -124,42 +114,43 @@ const mobileOptions = {
 }
 
 //TRAFFIC CHART
-let trafficCanvas = selectElementById('traffic').getContext('2d');
-let trafficChart = new Chart(trafficCanvas, {
-    // The type of chart we want to create
-    type: 'line',
-    // The data for our dataset
-    data: displayTrafficData,
-    // Configuration options go here
-    options: displayTrafficOptions
-});
+let trafficCanvas = getId('traffic').getContext('2d');
+let trafficChart = createChart(trafficCanvas, 'line', displayTrafficData, displayTrafficOptions);
 
 //DAILY TRAFFIC CHART
-const dailyCanvas = selectElementById('daily-traffic').getContext('2d');
+const dailyCanvas = getId('daily-traffic').getContext('2d');
 const dailyChart = createChart(dailyCanvas, 'bar', dailyData, dailyOptions);
 
 //MOBILE USERS CHART
-const mobileCanvas = selectElementById('mobile-users').getContext('2d');
+const mobileCanvas = getId('mobile-users').getContext('2d');
 const mobileUser = createChart(mobileCanvas, 'doughnut', mobileData, mobileOptions);
 
-//This event listens to if one of the traffic-buttons are selected
+//EVENT LISTENERS
+//This event listens if one of the traffic-buttons are selected
 trafficList.addEventListener('click', (e) => {
-    //select li item user clicks
     const activeItem = e.target;
-    //use text.content.tolowercase() to take text
     const activeItemText = e.target.textContent.toLowerCase();
-    //select current current active li item
     let currentActiveItem = document.querySelector('.active');
-    //remove .active
-    currentActiveItem.classList.remove('active');
-    //add .active to new active-button
-    activeItem.classList.add('active');
-    //use activeItemText to choose which datasets.data information to get
-    //trafficData.datasets[0].data = trafficData.activeItemText.data;
-
-    console.log(displayTrafficData.datasets[0].data);
-    console.log(activeItemText);
-
-    console.log(trafficData.activeItemText.labels);
-    console.log(trafficData.hourly.labels);
+    
+    updateActive(currentActiveItem, activeItem);
+    displayTrafficData.labels = trafficData[activeItemText].labels;
+    displayTrafficData.datasets[0].data = trafficData[activeItemText].data;
+    trafficChart.update();
 });
+
+//FUNCTIONS
+//This function updates the style of the current item the user has selected
+function updateActive(current, updated){
+    current.classList.remove('active');
+    updated.classList.add('active');
+}
+
+//This function creates a chart
+function createChart(canvas, type, data, options) {
+    const chart = new Chart(canvas, {
+        type: type,
+        data: data,
+        options: options
+    });
+    return chart;
+}

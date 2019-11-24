@@ -1,6 +1,6 @@
-const user = selectElementById('search-user');
-const message = selectElementById('write-message');
-const send = selectElementById('send');
+const user = getId('search-user');
+const message = getId('write-message');
+const send = getId('send');
 
 send.addEventListener('click', () => {
     if (user.value === '' || message.value === '') {

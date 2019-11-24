@@ -1,13 +1,14 @@
 //SELECTOR FUNCTION
-function selectElementById(id){
+//This function selects an element by Id
+function getId(id){
     return document.getElementById(id);
 }
 
-const alertBar = selectElementById('alert-bar');
-const bell = selectElementById('bell');
-const popUp = selectElementById('notification-pop-up');
-const ul = selectElementById('notification-list');
-const trafficList = selectElementById('traffic-list');
+const alertBar = getId('alert-bar');
+const bell = getId('bell');
+const popUp = getId('notification-pop-up');
+const ul = getId('notification-list');
+const trafficList = getId('traffic-list');
 const badge = document.querySelector('.badge');
 
 
