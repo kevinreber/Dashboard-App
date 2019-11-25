@@ -25,7 +25,7 @@
                 <a href="#" class="notification">
                     <svg id="notify" viewBox="0 0 32 32">
                         <g id="badge">
-                            <circle cx="75%" cy="20%" r="5"/>
+                            <circle cx="75%" cy="20%" r="5" />
                         </g>
                         <g class="bell">
                             <path d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
@@ -247,7 +247,14 @@
                 <h3>MESSAGE USER</h3>
                 <div class="message-content">
                     <form action="">
-                        <input class="search-user" id="search-user" type="text" placeholder="Search for User">
+                        <datalist id="search-user">
+                            <option value="Victoria Chels">
+                            <option value="Dale Byrd">
+                            <option value="Diane Wood">
+                            <option value="Dan Oliver">
+                        </datalist>
+                        <input list="search-user" class="search-user" id="search-user" type="text"
+                            placeholder="Search for User" name="search-user">
                         <textarea id="write-message" placeholder="Message for user"></textarea>
                         <button class="button-primary" id="send" type="button">SEND</button>
                     </form>
@@ -277,18 +284,20 @@
                             </span>
                         </label>
                     </div>
-                    <select class="form-field" id="timezone">
-                        <option disabled value="select">Select a Timezone</option>
-                        <option value="est">Eastern Standard Time</option>
-                        <option value="mst">Mountain Standard Time</option>
-                        <option value="pst">Pacific Standard Time</option>
-                        <option value="ast">Alaska Standard Time</option>
-                        <option value="hst">Hawaii-Aleutian Standard Time</option>
-                    </select>
-                    <div class="settings-button">
-                        <button class="button-primary" id="save">SAVE</button>
-                        <button class="button-secondary" id="cancel">CANCEL</button>
-                    </div>
+                    <form id="form">
+                        <select class="form-field" id="timezone">
+                            <option disabled value="select">Select a Timezone</option>
+                            <option value="est">Eastern Standard Time</option>
+                            <option value="mst">Mountain Standard Time</option>
+                            <option value="pst">Pacific Standard Time</option>
+                            <option value="ast">Alaska Standard Time</option>
+                            <option value="hst">Hawaii-Aleutian Standard Time</option>
+                        </select>
+                        <div class="settings-button">
+                            <button class="button-primary" id="save" type="submit">SAVE</button>
+                            <button class="button-secondary" id="cancel" type="reset">CANCEL</button>
+                        </div>
+                    </form>
                 </div>
             </section>
         </main>
