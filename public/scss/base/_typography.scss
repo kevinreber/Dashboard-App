@@ -32,12 +32,17 @@ small{
     font-weight: 100;
 }
 
-#timezone {
-    font-size: 16px;
+.page-title{
+    color: $color-secondary;
+    font-size: 30px;
 }
 
 #app-name{
     font-size: 36px;
+}
+
+#timezone {
+    font-size: 16px;
 }
 
 @media (min-width: $desktop) {

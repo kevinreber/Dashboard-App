@@ -3,7 +3,7 @@ const trafficData = {
     //labels are linked to datasets.data, if no labels are defined datasets.data will not display
     hourly: {
         labels: ['8am', '9am,', '10am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'],
-        data: [2.25, 3.5, 1.5, 2.75, 2.5, 4.25, 1.5, 2, .5, 3.75]
+        data: [2.25, 3.5, 1.5, 2.75, 2.5, 4.25, 1.5, 2, 0.5, 3.75]
     },
 
     daily: {
@@ -19,10 +19,8 @@ const trafficData = {
     monthly: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         data: [25800, 45200, 34400, 65500, 34590, 128850, 63350, 78443, 63866, 87500, 34250, 22350]
-
     }
-
-}
+};
 
 //CHART DISPLAY
 let displayTrafficData = {
@@ -36,7 +34,7 @@ let displayTrafficData = {
         pointHoverRadius: 5,
         lineTension: 0
     }]
-}
+};
 
 let displayTrafficOptions = {
     aspectRatio: 2.5,
@@ -55,7 +53,7 @@ let displayTrafficOptions = {
             }
         }]
     }
-}
+};
 
 const dailyData = {
     labels: trafficData.daily.labels,
@@ -71,7 +69,7 @@ const dailyData = {
         maxBarThickness: 8,
         minBarLength: 2
     }]
-}
+};
 
 const dailyOptions = {
     legend: {
@@ -85,7 +83,7 @@ const dailyOptions = {
             }
         }]
     }
-}
+};
 
 const mobileData = {
     labels: [
@@ -97,7 +95,7 @@ const mobileData = {
         backgroundColor: [colorTertiary, colorSecondary, colorPrimary],
         data: [65, 10, 25]
     }]
-}
+};
 
 const mobileOptions = {
     legend: {
@@ -111,7 +109,7 @@ const mobileOptions = {
     animation: {
         animateScale: true
     }
-}
+};
 
 //TRAFFIC CHART
 let trafficCanvas = getId('traffic').getContext('2d');

@@ -42,7 +42,7 @@ badge.addEventListener('click', () => {
     for (let i = 0; i < notifications.length; i++) {
         generateList(notifications[i]);
     }
-})
+});
 
 //This function generates a random list of notifications
 function generateNotifications(notifications, num) {
@@ -54,7 +54,7 @@ function generateNotifications(notifications, num) {
         if (notifyUser.includes(notify)) {
             i--;
         } else {
-            notifyUser.push(notify)
+            notifyUser.push(notify);
         }
     }
     return notifyUser;
