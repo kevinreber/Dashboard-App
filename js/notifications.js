@@ -27,7 +27,6 @@ ul.addEventListener('click', (e) => {
     if (item.classList.contains('close-notification')) {
        ul.removeChild(itemParent);
         if(!ul.hasChildNodes()){
-            bell.style.width = '2.5rem';
             popUp.style.display ='none';
         }  
     }

@@ -9,7 +9,7 @@ const bell = getId('bell');
 const popUp = getId('notification-pop-up');
 const ul = getId('notification-list');
 const trafficList = getId('traffic-list');
-const badge = document.querySelector('.badge');
+const badge = getId('badge');
 
 
 //CHART COLORS

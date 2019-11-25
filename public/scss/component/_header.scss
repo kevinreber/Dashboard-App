@@ -7,6 +7,19 @@
     padding-left: 1rem;
 }
 
+.nav-icon,
+.user-image,
+.member img {
+    width: 45px;
+    height: 45px;
+}
+
+.user-image,
+.member img {
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 .user {
     display: flex;
     justify-content: flex-end;
@@ -14,7 +27,7 @@
 
     & img,
     h3 {
-        margin: auto 10px;
+        margin: auto 5px;
         color: #ffffff;
     }
 
@@ -25,17 +38,17 @@
 
 .notification {
     text-decoration: none;
-    display: flex;
-    position: relative;
     border-right: 1px solid $color-secondary;
-    margin-right: 2rem;
-    padding-right: 2rem;
+    margin: auto 1rem auto 0;
+    padding-right: .6rem;
 
     &-card {
         background-color: #555555;
         color: #ffffff;
-        padding: 1.5rem;
+        padding: 1rem;
         width: 100%;
+        height: 100px;
+        border-bottom: 1px solid #ffffff;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -44,51 +57,87 @@
             background-color: #858585;
         }
     }
+}
 
-    & .badge {
-        position: absolute;
-        top: 10px;
-        right: 5px;
-        font-size: 85%;
-        padding: 3px 7px;
-        margin-right: 2.1rem;
-        border-radius: 50%;
-        text-align: center;
-        background-color: $color-selector;
-        color: #ffffff;
-        border: 1px solid #ffffff;
+.bell {
+    width: 20px;
+    fill: #ffffff;
+}
 
-        &:hover {
-            background-color: red;
-        }
+#badge {
+    fill: rgb(96, 185, 96);
+    stroke-width: 1;
+    stroke: white;
+
+    &:hover {
+        fill: red;
     }
+}
+
+#notify {
+    height: 40px;
+    width: 40px;
 }
 
 #notification {
     &-pop-up {
         position: absolute;
-        top: 50%;
-        right: 150%;
         display: none;
+        top: 3%;
+        left: 50%;
+        width: 175px;
+        z-index: 10;
+        opacity: .97;
     }
 
     &-list {
-        width: 175%;
         padding: 0;
         list-style-type: none;
         border: 1px solid #ffffff;
-        border-radius: 10px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px #aaaaaa ;
+
+        li:first-child {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        li:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
     }
 }
 
-#bell{
-    width: 2.8rem;
-}
-
 @media (min-width: $medium) {
+
     .notification {
+        margin-right: 2rem;
+        padding-right: 2rem;
+
         &-card {
             padding: .8rem;
         }
+    }
+
+    .user {
+
+        & img,
+        h3 {
+            margin: auto 10px;
+        }
+    }
+
+    #notification {
+        &-pop-up {
+            top: 0;
+            right: 5%;
+            width: 30%;
+        }
+    }
+
+    #notify {
+        height: 35px;
+        width: 35px;
     }
 }

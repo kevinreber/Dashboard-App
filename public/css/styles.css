@@ -25,8 +25,12 @@ h3 {
   margin-top: 1rem;
 }
 
-#app-name {
-  font-size: 28px;
+h3 {
+  font-size: 18px;
+}
+
+small {
+  font-weight: 100;
 }
 
 #timezone {
@@ -34,18 +38,18 @@ h3 {
 }
 
 #app-name {
-  font-size: 40px;
+  font-size: 36px;
 }
 
 @media (min-width: 1024px) {
   h1 {
     font-size: 36px;
   }
-}
-h3 {
-  font-size: 18px;
-}
 
+  #app-name {
+    font-size: 28px;
+  }
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -104,12 +108,12 @@ h3 {
   }
 
   .grid-container {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 70px 1fr;
     grid-template-areas: "head head" "navigation main";
   }
 
   .grid-content {
-    grid-template-columns: 50%;
+    grid-template-columns: 1fr 1fr;
   }
 
   .widgets,
@@ -130,16 +134,6 @@ h3 {
     grid-column: 2/span 1;
   }
 }
-.user-image, .member img {
-  border-radius: 100%;
-  object-fit: cover;
-}
-
-.nav-icon, .bell, .user-image, .member img {
-  width: 45px;
-  height: 45px;
-}
-
 .chart-area-title {
   display: flex;
   justify-content: space-between;
@@ -180,6 +174,19 @@ h3 {
   padding-left: 1rem;
 }
 
+.nav-icon,
+.user-image,
+.member img {
+  width: 45px;
+  height: 45px;
+}
+
+.user-image,
+.member img {
+  border-radius: 100%;
+  object-fit: cover;
+}
+
 .user {
   display: flex;
   justify-content: flex-end;
@@ -187,7 +194,7 @@ h3 {
 }
 .user img,
 .user h3 {
-  margin: auto 10px;
+  margin: auto 5px;
   color: #ffffff;
 }
 .user-image {
@@ -196,17 +203,17 @@ h3 {
 
 .notification {
   text-decoration: none;
-  display: flex;
-  position: relative;
   border-right: 1px solid #4D4c72;
-  margin-right: 2rem;
-  padding-right: 2rem;
+  margin: auto 1rem auto 0;
+  padding-right: 0.6rem;
 }
 .notification-card {
   background-color: #555555;
   color: #ffffff;
-  padding: 1.5rem;
+  padding: 1rem;
   width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -214,44 +221,74 @@ h3 {
 .notification-card:hover {
   background-color: #858585;
 }
-.notification .badge {
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  font-size: 85%;
-  padding: 3px 7px;
-  margin-right: 2.1rem;
-  border-radius: 50%;
-  text-align: center;
-  background-color: #60b960;
-  color: #ffffff;
-  border: 1px solid #ffffff;
+
+.bell {
+  width: 20px;
+  fill: #ffffff;
 }
-.notification .badge:hover {
-  background-color: red;
+
+#badge {
+  fill: #60b960;
+  stroke-width: 1;
+  stroke: white;
+}
+#badge:hover {
+  fill: red;
+}
+
+#notify {
+  height: 40px;
+  width: 40px;
 }
 
 #notification-pop-up {
   position: absolute;
-  top: 50%;
-  right: 150%;
   display: none;
+  top: 3%;
+  left: 50%;
+  width: 175px;
+  z-index: 10;
+  opacity: 0.97;
 }
 #notification-list {
-  width: 175%;
   padding: 0;
   list-style-type: none;
   border: 1px solid #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #aaaaaa;
 }
-
-#bell {
-  width: 2.8rem;
+#notification-list li:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#notification-list li:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 @media (min-width: 768px) {
+  .notification {
+    margin-right: 2rem;
+    padding-right: 2rem;
+  }
   .notification-card {
     padding: 0.8rem;
+  }
+
+  .user img,
+.user h3 {
+    margin: auto 10px;
+  }
+
+  #notification-pop-up {
+    top: 0;
+    right: 5%;
+    width: 30%;
+  }
+
+  #notify {
+    height: 35px;
+    width: 35px;
   }
 }
 .social-card {
@@ -394,8 +431,6 @@ hr {
 }
 .nav-bar {
   background-color: #4D4c72;
-  display: flex;
-  justify-content: space-around;
 }
 .nav-items {
   width: 80%;
@@ -408,20 +443,18 @@ hr {
 }
 .nav-icon:hover {
   opacity: 1;
-}
-.nav-selection {
-  position: absolute;
-  height: 2.8rem;
-  top: 110px;
-  left: 0;
-  border-left: 5px solid #60b960;
+  cursor: pointer;
 }
 .nav-chosen {
   opacity: 1;
+  box-shadow: 0 5px 0 0 #60b960;
+}
+.nav-selection {
+  display: none;
 }
 
-@media (min-width: 1024px) {
-  .side-nav {
+@media (min-width: 768px) {
+  .nav-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -429,6 +462,12 @@ hr {
     grid-row-end: -1;
     grid-column-start: 1;
     grid-column-end: 2;
+  }
+  .nav-items {
+    padding-top: 10px;
+  }
+  .nav-chosen {
+    box-shadow: -5px 0 0 #60b960;
   }
 }
 .dashboard {
@@ -460,6 +499,7 @@ textarea {
 
 input {
   width: 45%;
+  margin-right: 1rem;
 }
 
 textarea {
@@ -467,9 +507,7 @@ textarea {
 }
 
 #alert-bar {
-  width: 100%;
   color: #ffffff;
-  padding: 0.5px;
   margin-right: 1.5rem;
   background-color: #4D4c72;
   font-size: 12px;
