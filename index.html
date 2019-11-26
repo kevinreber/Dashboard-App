@@ -17,7 +17,7 @@
 <body>
     <div class="grid-container">
         <header class="header">
-            <h1 id="app-name">Dash<small>app</small></h1>
+            <h1 id="app-name"><span id="app-big">Dash</span><small>app</small></h1>
             <div class="user">
                 <a href="#" class="notification">
                     <svg id="notify" viewBox="0 0 32 32">
@@ -293,6 +293,54 @@
                 </div>
             </section>
         </main>
+        <aside id="msg-overlay">
+            <div class="msg-overlay-container">
+                <header class="msg-header">
+                    <div class="msg-icons">
+                        <img class="msg-user-image" src="public/images/me.jpg" alt="Profile Image">
+                        <div class="is-online">
+                        </div>
+                        <button class="msg-online-button">Online</button>
+                    </div>
+                    <div class="msg-widget">
+                        <img class="settings-icon" src="public/icons/settings.svg" alt="settings">
+                    </div>
+                </header>
+                <div id="msg-list">
+                    <div class="member">
+                        <img src="public/images/member-1.jpg" alt="Member 1">
+                        <div class="member-text">
+                            <p>Victoria Chels</p>
+                        </div>
+                        <p class="msg-status online">Online!</p>
+                    </div>
+                    <hr>
+                    <div class="member">
+                        <img src="public/images/member-2.jpg" alt="Member 2">
+                        <div class="member-text">
+                            <p>Dale Byrd</p>
+                        </div>
+                        <p class="msg-status online">Online!</p>
+                    </div>
+                    <hr>
+                    <div class="member">
+                        <img src="public/images/member-3.jpg" alt="Member 3">
+                        <div class="member-text">
+                            <p>Diane Wood</p>
+                        </div>
+                        <p class="msg-status offline">Offline</p>
+                    </div>
+                    <hr>
+                    <div class="member">
+                        <img src="public/images/member-4.jpg" alt="Member 4">
+                        <div class="member-text">
+                            <p>Dan Oliver</p>
+                        </div>
+                        <p class="msg-status offline">Offline</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
     </div>
     <!-- CHART LIBRARY SCRIPT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>

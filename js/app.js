@@ -1,4 +1,3 @@
-//SELECTOR FUNCTION
 //This function selects an element by Id
 function getId(id) {
     return document.getElementById(id);
@@ -14,6 +13,8 @@ const form = getId('form');
 const timezone = getId('timezone');
 const saveSettings = getId('save');
 const clearSettings = getId('cancel');
+const messageList = getId('msg-list');
+const messageBar = document.querySelector('.msg-header');
 let timezoneStorage = localStorage.getItem('settings') ? JSON.parse(localStorage.getItem('storage')) : [];
 
 
@@ -34,4 +35,12 @@ form.addEventListener('submit', (e) => {
 
 form.addEventListener('reset', (e) => {
     localStorage.clear();
+});
+
+//HANDLE FOOTER
+messageBar.addEventListener('click', (e) => {
+    if (messageList.style.display === 'block') {
+        messageList.style.display = 'none';  
+    } else
+        messageList.style.display = 'block';
 });

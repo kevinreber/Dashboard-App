@@ -28,17 +28,21 @@ h3 {
     font-size: 18px;
 }
 
-small{
+small {
     font-weight: 100;
 }
 
-.page-title{
-    color: $color-secondary;
+.page-title {
+    color: #363636;
     font-size: 30px;
 }
 
-#app-name{
+#app-name {
     font-size: 36px;
+}
+
+#app-big {
+    font-size: 40px;
 }
 
 #timezone {
@@ -49,6 +53,7 @@ small{
     h1 {
         font-size: 36px;
     }
+
     #app-name {
         font-size: 28px;
     }

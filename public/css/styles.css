@@ -34,12 +34,16 @@ small {
 }
 
 .page-title {
-  color: #4D4c72;
+  color: #363636;
   font-size: 30px;
 }
 
 #app-name {
   font-size: 36px;
+}
+
+#app-big {
+  font-size: 40px;
 }
 
 #timezone {
@@ -438,7 +442,6 @@ hr {
   background-color: #4D4c72;
 }
 .nav-items {
-  width: 80%;
   text-align: center;
 }
 .nav-icon {
@@ -475,6 +478,101 @@ hr {
     box-shadow: -5px 0 0 #60b960;
   }
 }
+#msg-overlay {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  z-index: 10000;
+}
+
+.msg-overlay-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #4D4c72;
+}
+.msg-header {
+  background-color: #4D4c72;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.msg-icons {
+  display: flex;
+  margin-left: 0.8rem;
+  margin-right: 76px;
+}
+.msg-user-image, .msg-online-button {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.msg-user-image {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.msg-online-button {
+  border: none;
+  background-color: transparent;
+  color: #60b960;
+  font-size: 16px;
+  padding: 12px;
+}
+.msg-status {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+.is-online {
+  background: #60b960;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 1px solid #ffffff;
+  position: absolute;
+  top: 11px;
+  left: 17%;
+}
+
+.settings-icon {
+  width: 20px;
+  margin-right: 1rem;
+}
+
+.online {
+  color: #60b960;
+}
+
+.offline {
+  color: #939393;
+  font-style: italic;
+}
+
+#msg-list {
+  background-color: #ffffff;
+  width: 100%;
+  display: none;
+}
+#msg-list img {
+  width: 25px;
+  height: 25px;
+}
+#msg-list .member {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 0.8rem;
+}
+#msg-list .member-text {
+  font-size: 12px;
+}
+
 .dashboard {
   display: flex;
   justify-content: space-between;
