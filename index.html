@@ -258,7 +258,7 @@
                 <div class="settings-content">
                     <div class="switch-toggle">
                         <label class="switch-light switch-ios" style="width: 400px" onclick>
-                            <input type="checkbox">
+                            <input type="checkbox" id="settings-email">
                             <strong>Send Email Notifications</strong>
                             <span>
                                 <span>OFF</span>
@@ -267,7 +267,7 @@
                             </span>
                         </label>
                         <label class="switch-light switch-ios" style="width: 400px" onclick>
-                            <input type="checkbox">
+                            <input type="checkbox" id="settings-profile">
                             <strong>Set Profile to Public</strong>
                             <span>
                                 <span>OFF</span>
@@ -276,7 +276,7 @@
                             </span>
                         </label>
                     </div>
-                    <form id="form">
+                    <form>
                         <select class="form-field" id="timezone">
                             <option disabled value="select">Select a Timezone</option>
                             <option value="est">Eastern Standard Time</option>
@@ -285,9 +285,9 @@
                             <option value="ast">Alaska Standard Time</option>
                             <option value="hst">Hawaii-Aleutian Standard Time</option>
                         </select>
-                        <div class="settings-button">
+                        <div id="settings-button">
                             <button class="button-primary" id="save" type="submit">SAVE</button>
-                            <button class="button-secondary" id="cancel" type="reset">CANCEL</button>
+                            <button class="button-secondary" id="cancel" type="submit">CANCEL</button>
                         </div>
                     </form>
                 </div>

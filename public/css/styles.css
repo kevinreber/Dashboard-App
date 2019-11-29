@@ -241,13 +241,11 @@ small {
   stroke-width: 1;
   stroke: white;
 }
-#badge:hover {
-  fill: red;
-}
 
 #notify {
   height: 40px;
   width: 40px;
+  cursor: pointer;
 }
 
 #notification-pop-up {
@@ -262,7 +260,6 @@ small {
 #notification-list {
   padding: 0;
   list-style-type: none;
-  border: 1px solid #ffffff;
   border-radius: 5px;
   box-shadow: 1px 1px 5px #aaaaaa;
 }
@@ -291,7 +288,7 @@ small {
 
   #notification-pop-up {
     top: 0;
-    right: 5%;
+    right: -25px;
     width: 30%;
   }
 

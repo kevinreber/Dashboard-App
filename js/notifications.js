@@ -11,7 +11,7 @@ const notificationArray = [
 
 alertBar.innerHTML = `
 <div class="alert-banner">
-    <p><strong>ALERT:</strong> You have <strong>5</strong> overdue tasks to complete</p>
+    <p><strong>ALERT:</strong> You have <strong>4</strong> overdue tasks to complete</p>
     <p class="alert-banner-close">x</p>
 </div>`;
 
@@ -24,23 +24,24 @@ alertBar.addEventListener('click', (e) => {
 ul.addEventListener('click', (e) => {
     let item = e.target;
     let itemParent = item.parentNode;
-    if (item.classList.contains('close-notification')) {
-       ul.removeChild(itemParent);
-        if(!ul.hasChildNodes()){
-            popUp.style.display ='none';
-        }  
+    if (item.classList.contains('toggle-notification')) {
+        itemParent.style.display = 'none';
     }
 });
 
-badge.addEventListener('click', () => {
+notify.addEventListener('click', () => {
     //badge disappears
     badge.style.display = 'none';
     popUp.style.display = 'block';
 
-    const notifications = generateNotifications(notificationArray, 4);
+    if (ul.childNodes.length === 0) {
+        const notifications = generateNotifications(notificationArray, 4);
 
-    for (let i = 0; i < notifications.length; i++) {
-        generateList(notifications[i]);
+        for (let i = 0; i < notifications.length; i++) {
+            generateList(notifications[i]);
+        }
+    } else {
+        toggleNotification.style.display = '';
     }
 });
 
@@ -63,7 +64,7 @@ function generateNotifications(notifications, num) {
 //This function creates a list item for an array
 function generateList(item) {
     let li = document.createElement('li');
-    li.innerHTML = `<p>${item}</p> <span class="close-notification">x</span>`;
+    li.innerHTML = `<p>${item}</p> <span class="toggle-notification">x</span>`;
     li.classList.add('notification-card');
     ul.appendChild(li);
 }

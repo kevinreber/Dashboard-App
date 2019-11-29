@@ -2,21 +2,26 @@
 function getId(id) {
     return document.getElementById(id);
 }
+//This function set's an item to chosen storage type
+function storage(storage, keyName, keyValue) {
+    return storage.setItem(keyName, keyValue);
+}
 
 const alertBar = getId('alert-bar');
-const bell = getId('bell');
+const notify = getId('notify');
 const popUp = getId('notification-pop-up');
 const ul = getId('notification-list');
+const toggleNotification = document.querySelectorAll('.toggle-notification');
 const trafficList = getId('traffic-list');
 const badge = getId('badge');
-const form = getId('form');
+const emailSettings = getId('settings-email');
+const profSettings = getId('settings-profile');
 const timezone = getId('timezone');
+const settingsButton = getId('settings-button');
 const saveSettings = getId('save');
 const clearSettings = getId('cancel');
 const messageList = getId('msg-list');
 const messageBar = document.querySelector('.msg-header');
-let timezoneStorage = localStorage.getItem('settings') ? JSON.parse(localStorage.getItem('storage')) : [];
-
 
 //CHART COLORS
 const colorPrimary = 'rgb(116,119,191,.3)';
@@ -28,19 +33,34 @@ const colorSecondaryHover = 'rgb(77,76,114)';
 const colorTertiaryHover = 'rgb(116,119,191)';
 
 //LOCAL STORAGE
-form.addEventListener('submit', (e) => {
-    timezoneStorage.push(timezone.value);
-    localStorage.setItem('timezoneSettings', JSON.stringify(timezoneStorage));
+settingsButton.addEventListener('click', (e) => {
+    const button = e.target;
+
+    if (button.id === 'save') {
+        storage(localStorage, 'timezone', timezone.value);
+        storage(localStorage, 'email', emailSettings.checked);
+        storage(localStorage, 'profile', profSettings.checked);
+    } else if (button.id === 'cancel') {
+        localStorage.clear();
+        location.reload();
+    }
 });
 
-form.addEventListener('reset', (e) => {
-    localStorage.clear();
-});
+window.onload = checkStorage();
+
+//This function checks to see if there are any values in Local Storage
+function checkStorage() {
+    if (localStorage.timezone) {
+        timezone.value = localStorage.timezone;
+        emailSettings.checked = JSON.parse(localStorage.email);
+        profSettings.checked = JSON.parse(localStorage.profile);
+    }
+}
 
 //HANDLE FOOTER
 messageBar.addEventListener('click', (e) => {
     if (messageList.style.display === 'block') {
-        messageList.style.display = 'none';  
+        messageList.style.display = 'none';
     } else
         messageList.style.display = 'block';
 });
