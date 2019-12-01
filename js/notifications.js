@@ -17,7 +17,7 @@ alertBar.innerHTML = `
 
 alertBar.addEventListener('click', (e) => {
     if (e.target.classList.contains('alert-banner-close')) {
-        alertBar.style.display = 'none';
+        slideUp(alertBar);
     }
 });
 
@@ -25,7 +25,7 @@ ul.addEventListener('click', (e) => {
     let item = e.target;
     let itemParent = item.parentNode;
     if (item.classList.contains('toggle-notification')) {
-        itemParent.style.display = 'none';
+        slideUp(itemParent);
     }
 });
 
@@ -67,4 +67,19 @@ function generateList(item) {
     li.innerHTML = `<p>${item}</p> <span class="toggle-notification">x</span>`;
     li.classList.add('notification-card');
     ul.appendChild(li);
+}
+
+//This function closes element
+function slideUp(el) {
+    el.style.transition = "all .5s ease-in-out";
+    el.style.height = "0";
+    el.style.padding = "0";
+    el.style.border = "none";
+    el.style.opacity = "0";
+}
+
+//This function slides element up when page loads
+window.onload = () => {
+    alertBar.style.transition = "all 1s ease-in-out";
+    alertBar.style.height = "50px";
 }

@@ -33,17 +33,24 @@ small {
   font-weight: 100;
 }
 
+input:hover,
+textarea:hover {
+  cursor: auto;
+}
+input:focus,
+textarea:focus {
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px #7477BF, -1px -1px 5px #7477BF;
+  outline: none;
+}
+
 .page-title {
   color: #363636;
   font-size: 30px;
 }
 
-#app-name {
+#app-name, #app-big {
   font-size: 36px;
-}
-
-#app-big {
-  font-size: 40px;
 }
 
 #timezone {
@@ -82,6 +89,7 @@ small {
 
 .widgets {
   padding-left: 1.5rem;
+  margin-top: 130px;
 }
 
 .traffic,
@@ -106,6 +114,10 @@ small {
 }
 
 @media (min-width: 768px) {
+  .widgets {
+    margin-top: 0;
+  }
+
   .daily-traffic,
 .message-user,
 .new-members {
@@ -118,6 +130,7 @@ small {
 
   .grid-container {
     grid-template-columns: 70px 1fr;
+    grid-template-rows: 65px 1fr;
     grid-template-areas: "head head" "navigation main";
   }
 
@@ -174,6 +187,20 @@ small {
     font-size: 14px;
   }
 }
+@keyframes turn {
+  0% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: rotate(45deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1.1);
+  }
+}
 .header {
   background-color: #7477BF;
   color: #ffffff;
@@ -181,13 +208,17 @@ small {
   justify-content: space-between;
   padding-right: 1rem;
   padding-left: 1rem;
+  position: fixed;
+  width: 100%;
+  height: 65px;
+  z-index: 101;
 }
 
 .nav-icon,
 .user-image,
 .member img {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
 }
 
 .user-image,
@@ -227,12 +258,8 @@ small {
   flex-direction: row;
   justify-content: space-between;
 }
-.notification-card:hover {
-  background-color: #858585;
-}
 
 .bell {
-  width: 20px;
   fill: #ffffff;
 }
 
@@ -243,9 +270,12 @@ small {
 }
 
 #notify {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   cursor: pointer;
+}
+#notify:hover {
+  animation: turn 1.5s linear infinite;
 }
 
 #notification-pop-up {
@@ -261,7 +291,6 @@ small {
   padding: 0;
   list-style-type: none;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px #aaaaaa;
 }
 #notification-list li:first-child {
   border-top-left-radius: 5px;
@@ -273,6 +302,10 @@ small {
 }
 
 @media (min-width: 768px) {
+  .header {
+    box-shadow: 0 1px 3px #555555;
+  }
+
   .notification {
     margin-right: 2rem;
     padding-right: 2rem;
@@ -281,6 +314,10 @@ small {
     padding: 0.8rem;
   }
 
+  .user-image {
+    width: 35px;
+    height: 35px;
+  }
   .user img,
 .user h3 {
     margin: auto 10px;
@@ -293,8 +330,8 @@ small {
   }
 
   #notify {
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
   }
 }
 .social-card {
@@ -437,9 +474,16 @@ hr {
 }
 .nav-bar {
   background-color: #4D4c72;
+  position: fixed;
+  width: 100%;
+  margin-top: 64px;
+  box-shadow: 0 3px 10px #616161;
+  z-index: 100;
 }
 .nav-items {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .nav-icon {
   margin: 0.6rem 0.6rem;
@@ -452,10 +496,11 @@ hr {
 }
 .nav-chosen {
   opacity: 1;
-  box-shadow: 0 5px 0 0 #60b960;
 }
-.nav-selection {
-  display: none;
+.nav-slider {
+  position: absolute;
+  border-radius: 10px;
+  background-color: #60b960;
 }
 
 @media (min-width: 768px) {
@@ -467,12 +512,20 @@ hr {
     grid-row-end: -1;
     grid-column-start: 1;
     grid-column-end: 2;
+    height: 100%;
+    width: auto;
+    box-shadow: none;
+    margin-top: 65px;
   }
   .nav-items {
     padding-top: 10px;
+    flex-direction: column;
   }
-  .nav-chosen {
-    box-shadow: -5px 0 0 #60b960;
+  .nav-slider {
+    height: 40px;
+    width: 4px;
+    left: 0;
+    top: 22px;
   }
 }
 #msg-overlay {
@@ -541,6 +594,10 @@ hr {
 .settings-icon {
   width: 20px;
   margin-right: 1rem;
+  opacity: 0.8;
+}
+.settings-icon :hover {
+  opacity: 1;
 }
 
 .online {
@@ -611,6 +668,8 @@ textarea {
   margin-right: 1.5rem;
   background-color: #4D4c72;
   font-size: 12px;
+  height: 0;
+  opacity: 1;
 }
 
 .alert-banner {
@@ -1358,14 +1417,6 @@ button:hover {
   http://css-tricks.com/webkit-sibling-bug/
  */
 /*# sourceMappingURL=toggle-switch.css.map */
-.show {
-  transition: opacity 400ms;
-}
-
-.hide {
-  opacity: 0;
-}
-
 .social-card svg {
   width: 2.5rem;
   fill: #4D4c72;

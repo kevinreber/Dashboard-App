@@ -25,8 +25,9 @@
 }
 
 //PADDING TO EACH MAIN SECTION
-.widgets{
+.widgets {
     padding-left: 1.5rem;
+    margin-top: 130px;
 }
 
 .traffic,
@@ -54,6 +55,10 @@
 //MEDIA QUERIES
 @media (min-width: $medium) {
 
+    .widgets {
+        margin-top: 0;
+    }
+
     //SIDE BORDER FOR DESKTOP VIEW
     .daily-traffic,
     .message-user,
@@ -67,6 +72,7 @@
 
     .grid-container {
         grid-template-columns: 70px 1fr;
+        grid-template-rows: 65px 1fr;
         grid-template-areas:
             "head head"
             "navigation main";

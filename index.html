@@ -34,22 +34,38 @@
                     </div>
                 </a>
                 <img class="user-image" src="public/images/me.jpg" alt="Profile Image">
-                <h3 class="user-name">Kevin Reebz</h3>
+                <h3 class="user-name">John Doe</h3>
             </div>
         </header>
         <!-- Side nav-bar -->
         <nav class="nav-bar">
             <div class="nav-items">
-                <span class="nav-selection"></span>
-                <img class="nav-icon nav-chosen" src="public/icons/icon-dashboard.svg" alt="Dashboard">
-                <img class="nav-icon" src="public/icons/icon-members.svg" alt="Members">
-                <img class="nav-icon" src="public/icons/icon-visits.svg" alt="Visits">
-                <img class="nav-icon" src="public/icons/icon-settings.svg" alt="Settings">
+                <span class="nav-slider"></span>
+                <div class="nav-link">
+                    <a href="#dashboard">
+                        <img class="nav-icon nav-chosen" src="public/icons/icon-dashboard.svg" alt="Dashboard">
+                    </a>
+                </div>
+                <div class="nav-link">
+                    <a href="#traffic">
+                        <img class="nav-icon" src="public/icons/icon-visits.svg" alt="Visits">
+                    </a>
+                </div>
+                <div class="nav-link">
+                    <a href="#members">
+                        <img class="nav-icon" src="public/icons/icon-members.svg" alt="Members">
+                    </a>
+                </div>
+                <div class="nav-link">
+                    <a href="#settings">
+                        <img class="nav-icon" src="public/icons/icon-settings.svg" alt="Settings">
+                    </a>
+                </div>
             </div>
         </nav>
         <main class="grid-content">
             <!-- Page Widgets -->
-            <section class="widgets">
+            <section id="dashboard" class="widgets">
                 <div class="dashboard">
                     <h2 class="page-title">Dashboard</h2>
                     <div class="search">
@@ -161,7 +177,7 @@
 
             </section>
 
-            <section class="new-members">
+            <section id="members" class="new-members">
                 <h3>NEW MEMBERS</h3>
                 <div class="member">
                     <img src="public/images/member-1.jpg" alt="Member 1">
@@ -253,7 +269,7 @@
                 </div>
             </section>
 
-            <section class="settings">
+            <section id="settings" class="settings">
                 <h3>SETTINGS</h3>
                 <div class="settings-content">
                     <div class="switch-toggle">

@@ -6,6 +6,11 @@ function getId(id) {
 function storage(storage, keyName, keyValue) {
     return storage.setItem(keyName, keyValue);
 }
+//This function changes the opacity of the user's selected nav icon
+function navBarChosen(oldSelection, newSelection) {
+    oldSelection.classList.remove('nav-chosen');
+    newSelection.classList.add('nav-chosen');
+}
 
 const alertBar = getId('alert-bar');
 const notify = getId('notify');
@@ -22,6 +27,8 @@ const saveSettings = getId('save');
 const clearSettings = getId('cancel');
 const messageList = getId('msg-list');
 const messageBar = document.querySelector('.msg-header');
+const navSlider = document.querySelector('.nav-slider');
+const navItems = document.querySelector('.nav-items');
 
 //CHART COLORS
 const colorPrimary = 'rgb(116,119,191,.3)';
@@ -56,6 +63,26 @@ function checkStorage() {
         profSettings.checked = JSON.parse(localStorage.profile);
     }
 }
+
+//HANDLE NAV SLIDER
+navItems.addEventListener('click', (e) => {
+    let unselectedElement = document.querySelector('.nav-chosen');
+    let element = e.target;
+    let elementAttr = e.target.getAttribute("alt");
+    if (elementAttr === 'Dashboard') {
+        navSlider.style.top = '22px';
+    }
+    if (elementAttr === 'Visits') {
+        navSlider.style.top = '85px';
+    }
+    if (elementAttr === 'Members') {
+        navSlider.style.top = '150px';
+    }
+    if (elementAttr === 'Settings') {
+        navSlider.style.top = '210px';
+    }
+    navBarChosen(unselectedElement, element);
+});
 
 //HANDLE FOOTER
 messageBar.addEventListener('click', (e) => {
