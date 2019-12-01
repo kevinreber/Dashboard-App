@@ -66,6 +66,10 @@ textarea:focus {
     font-size: 28px;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
