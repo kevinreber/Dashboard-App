@@ -30,8 +30,10 @@ let displayTrafficData = {
         backgroundColor: colorPrimary,
         borderColor: colorSecondary,
         borderWidth: 1,
-        pointHoverBackgroundColor: colorPrimaryHover,
-        pointHoverRadius: 5,
+        pointBackgroundColor: colorSecondaryHover,
+        pointHoverBackgroundColor: colorSecondaryHover,
+        pointRadius: 4,
+        pointHoverRadius: 8,
         lineTension: 0
     }]
 };
@@ -100,7 +102,8 @@ const mobileOptions = {
         labels: {
             boxWidth: 25,
             fontSize: 24,
-            padding: 25
+            padding: 25,
+            fontColor: 'lightgrey',
         }
     },
     animation: {

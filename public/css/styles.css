@@ -1,6 +1,7 @@
 @charset "UTF-8";
 * {
   box-sizing: border-box;
+  color: #ffffff;
 }
 
 h1,
@@ -20,7 +21,7 @@ span,
 
 h2,
 h3 {
-  color: #939393;
+  color: #dddddd;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -39,13 +40,13 @@ textarea:hover {
 }
 input:focus,
 textarea:focus {
-  background-color: #ffffff;
-  box-shadow: 1px 1px 5px #7477BF, -1px -1px 5px #7477BF;
+  background-color: #f5f5f5;
+  box-shadow: 1px 1px 5px #425165, -1px -1px 5px #425165;
   outline: none;
 }
 
 .page-title {
-  color: #363636;
+  color: #f5f5f5;
   font-size: 30px;
 }
 
@@ -66,8 +67,8 @@ textarea:focus {
     font-size: 28px;
   }
 }
-html {
-  scroll-behavior: smooth;
+body {
+  background-color: #202530;
 }
 
 .grid-container {
@@ -114,7 +115,7 @@ html {
 .new-members,
 .recent-activity,
 .message-user {
-  border-bottom: 1px solid #939393;
+  border-bottom: 1px solid #425165;
 }
 
 @media (min-width: 768px) {
@@ -125,7 +126,7 @@ html {
   .daily-traffic,
 .message-user,
 .new-members {
-    border-right: 1px solid #939393;
+    border-right: 1px solid #425165;
   }
 
   .message-user {
@@ -168,6 +169,7 @@ html {
   margin-left: 8px;
   font-size: 12px;
   display: inline-block;
+  padding: 10px;
 }
 
 .traffic-buttons {
@@ -178,16 +180,16 @@ html {
 }
 
 .active {
-  background-color: #60b960;
+  background-color: #4c5d74;
   border-radius: 5px;
-  padding: 8px;
+  padding: 10px;
   color: #ffffff;
   text-decoration: underline;
 }
 
 @media (min-width: 768px) {
   .chart-area-title ul li {
-    margin-left: 15px;
+    margin-left: 25px;
     font-size: 14px;
   }
 }
@@ -206,7 +208,7 @@ html {
   }
 }
 .header {
-  background-color: #7477BF;
+  background-color: #425165;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -247,20 +249,30 @@ html {
 
 .notification {
   text-decoration: none;
-  border-right: 1px solid #4D4c72;
+  border-right: 1px solid #1B1F2B;
   margin: auto 1rem auto 0;
   padding-right: 0.6rem;
 }
 .notification-card {
-  background-color: #555555;
+  background-color: #343d4f;
   color: #ffffff;
   padding: 1rem;
   width: 100%;
   height: 100px;
-  border-bottom: 1px solid #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.notification-card:not(:last-child) {
+  border-bottom: 1px solid #ffffff;
+}
+
+.toggle-notification {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+  height: 25px;
+  text-align: center;
 }
 
 .bell {
@@ -307,7 +319,7 @@ html {
 
 @media (min-width: 768px) {
   .header {
-    box-shadow: 0 1px 3px #555555;
+    box-shadow: 0 1px 3px #292929;
   }
 
   .notification {
@@ -339,9 +351,9 @@ html {
   }
 }
 .social-card {
-  border: 1px solid #939393;
+  border: 1px solid #dddddd;
   border-radius: 5px;
-  background-color: #dedede;
+  background-color: #343d4f;
   margin-bottom: 15px;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -350,8 +362,8 @@ html {
 }
 .social-icon {
   border-radius: 100%;
-  border: 1px solid #4D4c72;
-  background-color: #7377bf;
+  border: 1px solid #dddddd;
+  background-color: #1B1F2B;
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -366,7 +378,7 @@ html {
 .social-text h3 {
   margin: 0;
   font-size: 24px;
-  color: #7377bf;
+  color: #343d4f;
 }
 .social-text {
   margin-top: auto;
@@ -403,6 +415,9 @@ html {
   justify-content: space-between;
 }
 
+.new-members .member {
+  color: #f0f0f0;
+}
 .new-members .member-date {
   margin-left: auto;
 }
@@ -414,7 +429,7 @@ html {
 }
 .member a {
   text-decoration: none;
-  color: #7477BF;
+  color: #bbbbbb;
 }
 .member p {
   margin-top: 0;
@@ -435,7 +450,7 @@ html {
 
 hr {
   width: 100%;
-  border: 1px solid lightgray;
+  border: 1px solid #343d4f;
 }
 
 .search-user {
@@ -445,13 +460,14 @@ hr {
 
 #write-message {
   height: 8rem;
-  border: 1px solid #939393;
-  background-color: #f5f5f5;
+  border: 1px solid #dddddd;
+  background-color: #bbbbbb;
 }
 
 #timezone {
-  border: 1px solid #939393;
-  background-color: #f5f5f5;
+  border: 1px solid #dddddd;
+  background-color: #bbbbbb;
+  color: #757575;
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
@@ -476,12 +492,16 @@ hr {
     justify-content: space-between;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 .nav-bar {
-  background-color: #4D4c72;
+  background-color: #1B1F2B;
   position: fixed;
   width: 100%;
   margin-top: 64px;
-  box-shadow: 0 3px 10px #616161;
+  box-shadow: 0 3px 10px #292929;
   z-index: 100;
 }
 .nav-items {
@@ -504,7 +524,7 @@ hr {
 .nav-slider {
   position: absolute;
   border-radius: 10px;
-  background-color: #60b960;
+  background-color: #4c5d74;
 }
 
 @media (min-width: 768px) {
@@ -532,14 +552,14 @@ hr {
     top: 22px;
   }
 }
-#msg-overlay {
+#online-overlay {
   position: fixed;
   bottom: 0;
   right: 10px;
   z-index: 10000;
 }
 
-.msg-overlay-container {
+.online-overlay-container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -547,39 +567,38 @@ hr {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   cursor: pointer;
-  border: 1px solid #4D4c72;
+  border: 1px solid #1B1F2B;
 }
-.msg-header {
-  background-color: #4D4c72;
+.online-header {
+  background-color: #1B1F2B;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.msg-icons {
+.online-icons {
   display: flex;
   margin-left: 0.8rem;
   margin-right: 76px;
 }
-.msg-user-image, .msg-online-button {
+.online-user-image, .online-online-button {
   margin-top: auto;
   margin-bottom: auto;
 }
-.msg-user-image {
+.online-user-image {
   width: 30px;
   height: 30px;
   border: 1px solid #ffffff;
   border-radius: 100%;
   object-fit: cover;
 }
-.msg-online-button {
+.online-online-button {
   border: none;
   background-color: transparent;
-  color: #60b960;
   font-size: 16px;
   padding: 12px;
 }
-.msg-status {
+.online-status {
   margin-left: auto;
   font-size: 10px;
 }
@@ -609,25 +628,25 @@ hr {
 }
 
 .offline {
-  color: #939393;
+  color: #dddddd;
   font-style: italic;
 }
 
-#msg-list {
-  background-color: #ffffff;
+#online-list {
+  background-color: #343d4f;
   width: 100%;
   display: none;
 }
-#msg-list img {
+#online-list img {
   width: 25px;
   height: 25px;
 }
-#msg-list .member {
+#online-list .member {
   display: flex;
   justify-content: flex-start;
   margin-left: 0.8rem;
 }
-#msg-list .member-text {
+#online-list .member-text {
   font-size: 12px;
 }
 
@@ -638,7 +657,6 @@ hr {
 }
 
 .search {
-  background-color: #dedede;
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -653,9 +671,10 @@ hr {
 
 input,
 textarea {
-  background-color: #f5f5f5;
+  background-color: #bbbbbb;
   padding: 8px;
-  border: 1px solid #939393;
+  border: 1px solid #dddddd;
+  color: #1B1F2B;
 }
 
 input {
@@ -670,7 +689,7 @@ textarea {
 #alert-bar {
   color: #ffffff;
   margin-right: 1.5rem;
-  background-color: #4D4c72;
+  background-color: #1B1F2B;
   font-size: 12px;
   height: 0;
   opacity: 1;
@@ -708,19 +727,19 @@ button:hover {
 }
 
 .button-primary {
-  background-color: #7477BF;
+  background-color: #425165;
   color: #ffffff;
 }
 .button-primary:hover {
-  background-color: #4D4c72;
+  background-color: #1B1F2B;
 }
 .button-secondary {
-  background-color: #dedede;
-  color: #939393;
+  background-color: #dddddd;
+  color: #848484;
 }
 .button-secondary:hover {
-  background-color: #939393;
-  color: #dedede;
+  background-color: #b7b7b7;
+  color: #777777;
 }
 
 @media (min-width: 768px) {
@@ -1146,8 +1165,8 @@ button:hover {
 }
 @media only screen {
   .switch-ios.switch-light input:checked ~ span {
-    border-color: #7477BF;
-    box-shadow: inset 0 0 0 30px #7477BF;
+    border-color: #425165;
+    box-shadow: inset 0 0 0 30px #425165;
   }
 }
 @media only screen {
@@ -1170,7 +1189,7 @@ button:hover {
 }
 @media only screen {
   .switch-ios.switch-toggle a {
-    background-color: #7477BF;
+    background-color: #425165;
     border: 0.125em solid #D8D9DB;
     border-radius: 1.75em;
     transition: all 0.12s ease-out;
@@ -1423,7 +1442,7 @@ button:hover {
 /*# sourceMappingURL=toggle-switch.css.map */
 .social-card svg {
   width: 2.5rem;
-  fill: #4D4c72;
+  fill: #1B1F2B;
 }
 .social-card svg path {
   fill: #fff;

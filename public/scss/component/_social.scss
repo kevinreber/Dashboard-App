@@ -3,7 +3,7 @@
     &-card {
         border: 1px solid $color-section-title;
         border-radius: 5px;
-        background-color: $color-page-title;
+        background-color: $color-tertiary;
         margin-bottom: 15px;
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -14,8 +14,8 @@
 
     &-icon {
         border-radius: 100%;
-        border: 1px solid $color-secondary;
-        background-color: $color-tertiary;
+        border: 1px solid $color-section-title;
+        background-color: $color-secondary;
         width: 4rem;
         height: 4rem;
         display: flex;

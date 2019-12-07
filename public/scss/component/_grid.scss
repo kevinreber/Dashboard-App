@@ -1,3 +1,7 @@
+body{
+    background-color: $color-bg;
+}
+
 //GRID CONTAINER
 .grid-container {
     display: grid;
@@ -49,7 +53,7 @@
 .new-members,
 .recent-activity,
 .message-user {
-    border-bottom: 1px solid $color-section-title;
+    border-bottom: 1px solid $color-primary;
 }
 
 //MEDIA QUERIES
@@ -63,7 +67,7 @@
     .daily-traffic,
     .message-user,
     .new-members {
-        border-right: 1px solid $color-section-title;
+        border-right: 1px solid $color-primary;
     }
 
     .message-user {

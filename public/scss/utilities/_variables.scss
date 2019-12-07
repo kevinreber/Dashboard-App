@@ -1,13 +1,14 @@
 //Global Colors
-$color-primary: #7477BF;
-$color-secondary: #4D4c72;
-$color-tertiary: #7377bf;
-$color-selector: rgb(96, 185, 96);
+$color-bg: #202530;
+$color-primary: #425165;
+$color-secondary: #1B1F2B;
+$color-tertiary: lighten($color-bg, 10%);
+$color-selector: lighten($color-primary, 5%);
+$color-green: rgb(96, 185, 96);
 
 //Content Colors
-$color-fill: #f5f5f5;
-$color-page-title:#dedede;
-$color-section-title: #939393;
+$color-fill: #bbbbbb;
+$color-section-title: #dddddd;
 
 //Content Size
 $size-icon-image: 40px;

@@ -7,6 +7,7 @@
             margin-left: 8px;
             font-size: 12px;
             display: inline-block;
+            padding: 10px;
         }
     }
 }
@@ -21,7 +22,7 @@
 .active {
     background-color: $color-selector;
     border-radius: 5px;
-    padding: 8px;
+    padding: 10px;
     color: #ffffff;
     text-decoration: underline;
 }
@@ -31,8 +32,8 @@
     .chart-area-title {
         ul {
             li {
-                margin-left: 15px;
-                font-size: 14px;
+                margin-left: 25px;
+                font-size: 14px;              
             }
         }
     }

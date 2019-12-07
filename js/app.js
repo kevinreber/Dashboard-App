@@ -25,19 +25,19 @@ const timezone = getId('timezone');
 const settingsButton = getId('settings-button');
 const saveSettings = getId('save');
 const clearSettings = getId('cancel');
-const messageList = getId('msg-list');
-const messageBar = document.querySelector('.msg-header');
+const onlineList = getId('online-list');
+const onlineBar = document.querySelector('.online-header');
 const navSlider = document.querySelector('.nav-slider');
 const navItems = document.querySelector('.nav-items');
 
 //CHART COLORS
-const colorPrimary = 'rgb(116,119,191,.3)';
-const colorSecondary = 'rgb(77,76,114,.8)';
-const colorTertiary = 'rgb(116,119,191,.8)';
+const colorPrimary = '#384352';
+const colorSecondary = '#2A323B';
+const colorTertiary = '#425166';
 
-const colorPrimaryHover = 'rgb(116,119,191)';
-const colorSecondaryHover = 'rgb(77,76,114)';
-const colorTertiaryHover = 'rgb(116,119,191)';
+const colorPrimaryHover = '#425166';
+const colorSecondaryHover = '#4e5f75';
+const colorTertiaryHover = '#2D3646';
 
 //LOCAL STORAGE
 settingsButton.addEventListener('click', (e) => {
@@ -85,9 +85,9 @@ navItems.addEventListener('click', (e) => {
 });
 
 //HANDLE FOOTER
-messageBar.addEventListener('click', (e) => {
-    if (messageList.style.display === 'block') {
-        messageList.style.display = 'none';
+onlineBar.addEventListener('click', (e) => {
+    if (onlineList.style.display === 'block') {
+        onlineList.style.display = 'none';
     } else
-        messageList.style.display = 'block';
+        onlineList.style.display = 'block';
 });

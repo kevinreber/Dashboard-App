@@ -47,16 +47,26 @@
     padding-right: .6rem;
 
     &-card {
-        background-color: #555555;
+        background-color: $color-tertiary;
         color: #ffffff;
         padding: 1rem;
         width: 100%;
         height: 100px;
-        border-bottom: 1px solid #ffffff;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        &:not(:last-child){
+            border-bottom: 1px solid #ffffff;
+        }
     }
+}
+
+.toggle-notification{
+    border: 1px solid $color-section-title;
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    height: 25px;
+    text-align: center;
 }
 
 .bell {
@@ -64,7 +74,7 @@
 }
 
 #badge {
-    fill: rgb(96, 185, 96);
+    fill: $color-green;
     stroke-width: 1;
     stroke: white;
 }
@@ -109,7 +119,7 @@
 @media (min-width: $medium) {
 
     .header {
-        box-shadow: 0 1px 3px #555555;
+        box-shadow: 0 1px 3px #292929;
     }
 
     .notification {

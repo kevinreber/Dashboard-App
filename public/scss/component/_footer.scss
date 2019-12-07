@@ -1,11 +1,11 @@
-#msg-overlay {
+#online-overlay {
     position: fixed;
     bottom: 0;
     right: 10px;
     z-index: 10000;
 }
 
-.msg {
+.online {
     &-overlay-container {
         display: flex;
         justify-content: space-between;
@@ -48,7 +48,7 @@
     &-online-button {
         border: none;
         background-color: transparent;
-        color: $color-selector;
+        // color: $color-selector;
         font-size: 16px;
         padding: 12px;
     }
@@ -60,7 +60,7 @@
 }
 
 .is-online {
-    background: $color-selector;
+    background: $color-green;
     width: 10px;
     height: 10px;
     border-radius: 100%;
@@ -80,7 +80,7 @@
 }
 
 .online {
-    color: $color-selector;
+    color: $color-green;
 }
 
 .offline {
@@ -88,8 +88,8 @@
     font-style: italic;
 }
 
-#msg-list {
-    background-color: #ffffff;
+#online-list {
+    background-color: $color-tertiary;
     width: 100%;
     display: none;
 
@@ -99,7 +99,6 @@
     }
 
     & .member {
-        // margin: 0;
         display: flex;
         justify-content: flex-start;
         margin-left: .8rem;

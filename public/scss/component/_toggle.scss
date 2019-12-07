@@ -405,8 +405,8 @@
     }
 
     .switch-ios.switch-light input:checked~span {
-        border-color: #7477BF;
-        box-shadow: inset 0 0 0 30px #7477BF;
+        border-color: $color-primary;
+        box-shadow: inset 0 0 0 30px $color-primary;
     }
 
     .switch-ios.switch-light input:checked~span span:first-of-type {
@@ -425,7 +425,7 @@
     }
 
     .switch-ios.switch-toggle a {
-        background-color: #7477BF;
+        background-color: $color-primary;
         border: 0.125em solid #D8D9DB;
         border-radius: 1.75em;
         transition: all 0.12s ease-out;

@@ -21,12 +21,12 @@ button {
     }
 
     &-secondary {
-        background-color: $color-page-title;
-        color: $color-section-title;
+        background-color: $color-section-title;
+        color: darken($color-section-title, 35%);
 
         &:hover {
-            background-color: $color-section-title;
-            color: $color-page-title;
+            background-color: darken($color-section-title, 15%);
+            color: darken($color-section-title, 40%);
         }
     }
 }

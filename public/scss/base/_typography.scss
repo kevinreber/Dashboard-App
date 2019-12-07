@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    color: #ffffff;
 }
 
 h1,
@@ -39,14 +40,14 @@ textarea {
     }
 
     &:focus {
-        background-color: #ffffff;
+        background-color: #f5f5f5;
         box-shadow: 1px 1px 5px $color-primary, -1px -1px 5px $color-primary;
         outline: none;
     }
 }
 
 .page-title {
-    color: #363636;
+    color: #f5f5f5;
     font-size: 30px;
 }
 
