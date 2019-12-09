@@ -14,5 +14,6 @@ Project Focus:
 ![Dashboard App Demo](demo/dashApp.gif)
 <a href="https://kevinreber.github.io/Dashboard-App/">Live Demo</a>
 
+### Chart.js
 Charts were made with Chart.js
-https://www.chartjs.org/
+- https://www.chartjs.org/
