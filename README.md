@@ -1,6 +1,7 @@
 ## Dashboard App Project 
-Application is Mobile and Desktop Responsive
-This project focused on:
+Dashboard App that is Mobile and Desktop Responsive.
+
+Project Focus:
 - CSS flexbox and Grids
 - CSS Animations
 - Using SVG files
@@ -8,6 +9,10 @@ This project focused on:
 - Alerting User of incomplete forms
 - Saving User Settings with Local Storage
 - Building interactive charts to display static data
+
+### Demo
+![Dashboard App Demo](demo/dashApp.gif)
+<a href="https://kevinreber.github.io/Dashboard-App/">Live Demo</a>
 
 Charts were made with Chart.js
 https://www.chartjs.org/
