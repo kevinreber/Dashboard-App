@@ -160,6 +160,12 @@ body {
 .settings {
     grid-column: 2/span 1;
   }
+
+  #settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 .chart-area-title {
   display: flex;
@@ -174,9 +180,12 @@ body {
 
 .traffic-buttons {
   cursor: pointer;
+  transition: all 0.1s linear;
 }
 .traffic-buttons:hover {
   text-decoration: underline;
+  background-color: rgba(66, 81, 101, 0.4);
+  border-radius: 5px;
 }
 
 .active {
@@ -457,6 +466,9 @@ hr {
   display: block;
   width: 100%;
 }
+.search-user:hover {
+  cursor: pointer;
+}
 
 #write-message {
   height: 8rem;
@@ -464,19 +476,44 @@ hr {
   background-color: #bbbbbb;
 }
 
+.search-user,
+#write-message {
+  transition: all 0.1s linear;
+}
+.search-user:hover,
+#write-message:hover {
+  background-color: #ffffff;
+}
+
 #timezone {
   border: 1px solid #dddddd;
   background-color: #bbbbbb;
   color: #757575;
   padding: 1rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
   width: 100%;
+}
+#timezone:hover {
+  background-color: #ffffff;
 }
 
 .switch-toggle {
   flex: display;
   justify-content: space-between;
+}
+
+#timezone,
+.settings span {
+  transition: all 0.1s linear;
+}
+#timezone:hover,
+.settings span:hover {
+  cursor: pointer;
+}
+
+.settings span:hover {
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -488,6 +525,11 @@ hr {
   }
 
   .settings-button {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #settings-button {
     display: flex;
     justify-content: space-between;
   }
@@ -513,6 +555,7 @@ html {
   margin: 0.6rem 0.6rem;
   width: 2rem;
   opacity: 0.3;
+  transition: all 0.1s linear;
 }
 .nav-icon:hover {
   opacity: 1;
@@ -575,6 +618,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.online-header:hover {
+  background-color: #232838;
 }
 .online-icons {
   display: flex;
@@ -663,6 +709,12 @@ html {
   padding: 12px;
   border-bottom-left-radius: 10px;
 }
+.search-bar {
+  width: 35%;
+}
+.search-bar:hover, .search-bar:focus {
+  width: 45%;
+}
 
 .page-title {
   margin: auto;
@@ -675,6 +727,11 @@ textarea {
   padding: 8px;
   border: 1px solid #dddddd;
   color: #1B1F2B;
+  transition: all 0.1s ease-in-out;
+}
+input:hover,
+textarea:hover {
+  background-color: #ffffff;
 }
 
 input {
@@ -701,6 +758,9 @@ textarea {
 }
 .alert-banner p {
   margin: 1rem;
+}
+.alert-banner-close:hover {
+  cursor: pointer;
 }
 
 input,

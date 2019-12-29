@@ -3,14 +3,34 @@
     background-color: $color-fill;
     color: #757575;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     margin-bottom: 1.5rem;
     width: 100%;
+
+    &:hover {
+        background-color: #ffffff;
+    }
 }
 
 .switch-toggle {
     flex: display;
     justify-content: space-between;
+}
+
+#timezone,
+.settings span {
+    transition: all .1s linear;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.settings span {
+
+    &:hover {
+        box-shadow: 0 0 10px 1px rgba($color: #fff, $alpha: .4);
+    }
 }
 
 @media (min-width: $medium) {
@@ -23,6 +43,11 @@
     }
 
     .settings-button {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #settings-button{
         display: flex;
         justify-content: space-between;
     }

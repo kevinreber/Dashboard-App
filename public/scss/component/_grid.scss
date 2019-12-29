@@ -1,4 +1,4 @@
-body{
+body {
     background-color: $color-bg;
 }
 
@@ -102,5 +102,11 @@ body{
     .recent-activity,
     .settings {
         grid-column: 2 / span 1;
+    }
+
+    #settings {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }

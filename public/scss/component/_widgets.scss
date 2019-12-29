@@ -10,9 +10,18 @@
     justify-content: flex-end;
     padding: 12px;
     border-bottom-left-radius: 10px;
+
+    &-bar {
+        width: 35%;
+
+        &:hover,
+        &:focus {
+            width: 45%;
+        }
+    }
 }
 
-.page-title{
+.page-title {
     margin: auto;
     padding-right: 1.5rem;
 }
@@ -23,6 +32,11 @@ textarea {
     padding: 8px;
     border: 1px solid $color-section-title;
     color: $color-secondary;
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        background-color: #ffffff;
+    }
 }
 
 input {
@@ -47,8 +61,14 @@ textarea {
     display: flex;
     justify-content: space-between;
 
-    p {
+    & p {
         margin: 1rem;
+    }
+
+    &-close {
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 

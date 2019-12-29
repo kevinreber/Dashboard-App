@@ -23,6 +23,7 @@ html{
         margin: .6rem .6rem;
         width: 2rem;
         opacity: .3;
+        transition: all .1s linear;
 
         &:hover {
             opacity: 1;
