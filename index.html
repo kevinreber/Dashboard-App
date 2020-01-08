@@ -8,7 +8,9 @@
     <!-- NORMALIZE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CHART LIBRARY CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
     <link rel="stylesheet" href="public/css/styles.css">
@@ -292,6 +294,7 @@
                             </span>
                         </label>
                     </div>
+                    <div class="timezone-wrapper">
                         <select class="form-field" id="timezone">
                             <option value="0" selected="selected" disabled>Select a Timezone</option>
                             <option value="est">Eastern Standard Time</option>
@@ -300,10 +303,11 @@
                             <option value="ast">Alaska Standard Time</option>
                             <option value="hst">Hawaii-Aleutian Standard Time</option>
                         </select>
-                        <div id="settings-button">
-                            <button class="button-primary" id="save" type="submit">SAVE</button>
-                            <button class="button-secondary" id="cancel" type="submit">CANCEL</button>
-                        </div>
+                    </div>
+                    <div id="settings-button">
+                        <button class="button-primary" id="save" type="submit">SAVE</button>
+                        <button class="button-secondary" id="cancel" type="submit">CANCEL</button>
+                    </div>
                 </div>
             </section>
         </main>
